@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ramaalbrin/ramaalbrin # مسار المستودع الخاص بك على جيت هاب
   branch: main # اسم الفرع (غالباً main)
-  base_url: https://your-cloudflare-worker.workers.dev # (يجب تغييره إلى رابط Cloudflare Worker الخاص بك)
+  base_url: https://decap-auth.ramaalbrin.workers.dev # (يجب تغييره إلى رابط Cloudflare Worker الخاص بك)
 
 media_folder: "assets/images/posts" # الفولدر الذي ستحفظ فيه الصور
 public_folder: "assets/images/posts" # المسار الذي سيتم استدعاء الصور منه
@@ -25,4 +25,5 @@ collections:
               - {label: "تاريخ النشر", name: "date", widget: "datetime"}
               - {label: "وصف المقال (Meta Description)", name: "description", widget: "string"}
               - {label: "صورة الغلاف", name: "image", widget: "image"}
+
               - {label: "محتوى المقال الكامل", name: "body", widget: "markdown"}
