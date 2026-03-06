@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- SEO Titles and Description -->
+    <title>Work - Rama Albringi Portfolio | أعمالي - راما البرنجي</title>
+    <meta name="description"
+        content="Portfolio Work of Rama Albringi - Financial Analyst, Feasibility Studies Expert & Financial Modeler.">
+    <meta name="keywords"
+        content="أعمالي, سابقة أعمال, نماذج مالية, دراسات جدوى, مشاريع, راما البرنجي, Portfolio, Work, Projects, Financial Projects, Feasibility Studies, Financial Modeling">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="Work - Rama Albringi Portfolio">
+    <meta property="og:description"
+        content="Portfolio Work of Rama Albringi - Financial Analyst & Feasibility Studies Expert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nermeennoaman.github.io/portfolio-Rama-/work.html">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2300ffaa;stop-opacity:1' /><stop offset='50%25' style='stop-color:%2300aaff;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23aa00ff;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='45' fill='%230a0e1a'/><text x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='url(%23grad)' text-anchor='middle'>R</text></svg>"
+        type="image/svg+xml">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#2563eb',
+                        'light-bg': '#f0f7ff',
+                        'light-card': '#ffffff',
+                        'light-border': '#bfdbfe',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .work-card {
+            background: #eff6ff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.4);
+            border-color: #2563eb;
+            background: #ffffff;
+        }
+
+        .work-card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-card-image {
+            transform: scale(1.05);
+        }
+
+        .work-card-image-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .work-card-image-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(transparent, #eff6ff);
+        }
+
+        .work-card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .work-card-body {
+            padding: 20px 24px 24px;
+        }
+
+        .work-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .work-card-title i {
+            font-size: 1.2rem;
+        }
+
+        .project-list {
+            max-height: none;
+            overflow: visible;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            color: #1e3a5f;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-item i {
+            color: #2563eb;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .project-item .project-tag {
+            margin-left: auto;
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            color: #2563eb;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(37, 99, 235, 0.03);
+        }
+
+        .toggle-btn:hover {
+            background: rgba(37, 99, 235, 0.05);
+            border-color: #2563eb;
+        }
+
+        .toggle-btn i {
+            transition: transform 0.3s;
+        }
+
+        .toggle-btn.open i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="aurora-bg">
+    <div class="aurora-overlay"></div>
+
+    <!-- ========================================
+         📱 NAVIGATION SECTION - قسم التنقل
+         ======================================== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo gradient-text" data-translate-key="hero_name">Rama Albringi</a>
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="index.html#experience" data-translate-key="nav_experience">Experience</a></li>
+                    <li><a href="work.html" class="active-page" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" onclick="handleLanguageToggle()" id="lang-toggle-btn"
+                            style="margin: 0; padding: 0.8rem 1.25rem; font-size: 1rem;">
+                            العربية
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="index.html#experience" data-translate-key="nav_experience" onclick="closeMobileMenu()">Experience</a>
+        <a href="work.html" class="active-page" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="index.html#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book
+            Your Service</a>
+    </div>
+
+    <!-- ========================================
+         📂 WORK SECTION - قسم الأعمال
+         ======================================== -->
+    <section id="Work" class="py-20 pt-32">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4 text-[#1e3a5f]" data-translate-key="work_title">Portfolio
+            </h2>
+            <p class="text-center text-gray-500 mb-12 text-lg" data-translate-key="work_subtitle">A showcase of my
+                professional projects across various industries</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Card 1: Economic & Financial Feasibility Studies -->
+                <div class="work-card" id="feasibility-studies">
+                    <div class="work-card-image-container">
+                        <img src="images/feasibility_studies_blue_green.png" alt="Feasibility Studies"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_1_count">(11 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-briefcase"></i>
+                            <span data-translate-key="cat_1_title">1. Economic & Financial Feasibility Studies</span>
+                        </div>
+                        <div class="project-list" id="wc-1">
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_1">Financial Study - Al-Bwaha Winter Hotel</span>
+                                <span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_2">Financial Study - Block Factory</span>
+                                <span class="project-tag" data-translate-key="tag_syria">Syria</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_3">Financial Study - Jowik Application</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_4">Financial Study - Dawatec Factory</span>
+                                <span class="project-tag" data-translate-key="tag_syria_tr">Syria/Turkey</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_5">Financial Report - Al-Kharj Game Hall</span>
+                                <span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_6">Financial Study for Charitable Associations
+                                    Projects</span>
+                                <span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_7">Financial Study - Real Estate Development Company
+                                    (Riyadh)</span>
+                                <span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_8">Financial Study - Pearl Hotel (Qatar)</span>
+                                <span class="project-tag" data-translate-key="tag_qatar">Qatar</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_9">Financial Study - Expansion of Al-Sayegh Transport
+                                    Company (3 Years)</span>
+                                <span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_10">Financial Study - Hotel Complex Expansion for
+                                    Carriers</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_1_11">Private School Market Study</span>
+                                <span class="project-tag" data-translate-key="tag_syria">Syria</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 2: Technical & Financial Proposals -->
+                <div class="work-card" id="technical-proposals">
+                    <div class="work-card-image-container">
+                        <img src="images/technical_proposals_blue_green.png" alt="Technical Proposals"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_2_count">(11 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span data-translate-key="cat_2_title">2. Technical & Financial Proposals</span>
+                        </div>
+                        <div class="project-list" id="wc-2">
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_1">Technical & Financial Proposal - Mujeel Investment
+                                    Project</span>
+                                <span class="project-tag" data-translate-key="tag_Syria">Syria</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_2">Feasibility Study - Mujeel Investment Project</span>
+                                <span class="project-tag" data-translate-key="tag_Syria">Syria</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_3">Beton</span>
+                                <span class="project-tag" data-translate-key="tag_Syria">Syria</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_4">Economic Feasibility Study - Peril</span>
+                                <span class="project-tag" data-translate-key="tag_Qatar">Qatar</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_5">On-Demand Economic Feasibility Study</span>
+                                <span class="project-tag" data-translate-key="tag_Oman">Oman</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_6">Feasibility Study - Self-Henna Engraving
+                                    Project</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_7">Sales Report - Health Group and its Water
+                                    Affiliates</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_8">Sales Report - Health and Distribution
+                                    Company</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_9">Report - Al-Munawwarah Manufacturers Limited
+                                    Company</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_10">Sales Report - Water Factory</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chevron-right"></i>
+                                <span data-translate-key="proj_2_11">Financial Leasing Modeling</span>
+                                <span class="project-tag" data-translate-key="tag_syria">Syria</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 3: Projects -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/projects_general_blue_green.png" alt="Projects" class="work-card-image"
+                            loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_4_count">(9 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-industry"></i>
+                            <span data-translate-key="cat_4_title">3.Projects</span>
+                        </div>
+                        <div class="project-list" id="wc-3">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_1">Dental Clinics</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_2">Marketing and Distribution of Eye Moisturizing
+                                    Products</span><span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_3">Bitcon</span><span class="project-tag"
+                                    data-translate-key="tag_UAE">UAE</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_4">Land</span><span class="project-tag"
+                                    data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_5">Mayar Medical Company</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_6">Expansion - Al-Sabbagh Transportation Company</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_7">Expansion of a Hotel Complex for Carriers</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_8">Damascus Hospital</span><span class="project-tag"
+                                    data-translate-key="tag_syria">Syria</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_4_9">Smart Medical Sorting Platform</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 4: Environmental & Agricultural Projects -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/environmental_projects_blue_green.png" alt="Environmental Projects"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_5_count">(8 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-leaf"></i>
+                            <span data-translate-key="cat_5_title">4. Environmental & Agricultural Projects</span>
+                        </div>
+                        <div class="project-list" id="wc-4">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_1">Project to Extract Hydrocarbons from Waste</span><span
+                                    class="project-tag" data-translate-key="tag_Kuwait">Kuwait</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_2">Project Request for Agricultural Land</span><span
+                                    class="project-tag" data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_3">Fish Farm Project</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_4">Filtration of Used Oil Waste</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_5">Eye Drops Project (Moisturizing and
+                                    Distribution)</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_6">Feasibility Study for a Natural Products Store</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_7">Agricultural Project in Jebel Shams</span><span
+                                    class="project-tag" data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_5_8">Land Usufruct Applications</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 5: Public Services & Charity Projects -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/charity_projects_blue_green.png" alt="Charity Projects" class="work-card-image"
+                            loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_6_count">(5 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-hands-helping"></i>
+                            <span data-translate-key="cat_6_title">5. Public Services & Charity Projects</span>
+                        </div>
+                        <div class="project-list" id="wc-5">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_6_1">Operational Plan - "Emaar Mosques" Association</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_6_2">Feasibility Study - Business Incubator and Accelerator
+                                    for a Charity Association</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_6_3">Feasibility Study - Hajj and Umrah Services
+                                    "Al-Tameet"</span><span class="project-tag" data-translate-key="tag_ksa">KSA</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_6_4">Feasibility Study - Book Fair</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_6_5">Private School Pricing</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 6: Applications & Digital Platforms -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/digital_platforms_blue_green.png" alt="Digital Platforms"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_7_count">(10 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span data-translate-key="cat_7_title">6. Applications & Digital Platforms</span>
+                        </div>
+                        <div class="project-list" id="wc-6">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_1">Delivery App Feasibility Study</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_2">Taxi App Business Plan</span><span class="project-tag"
+                                    data-translate-key="tag_EGP">Egypt</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_3">"Tour Guide Booking" App</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_4">Website and App for Clothing Sales</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_5">Diamond App</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_6">Financial Study - Jowik App</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_7">Feasibility Study for "Binaa" (Building)
+                                    Platform</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_8">Feasibility Study for an E-Marketing Company</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_9">Feasibility Study for an E-Marketing Company</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_7_10">Battuta App (Taxi Application)</span><span
+                                    class="project-tag" data-translate-key="tag_Kuwait">Kuwait</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 7: Hotels, Restaurants & Cafes -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/hotels_restaurants_blue_green.png" alt="Hotels & Restaurants"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_8_count">(8 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-utensils"></i>
+                            <span data-translate-key="cat_8_title">7. Hotels, Restaurants & Cafes</span>
+                        </div>
+                        <div class="project-list" id="wc-7">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_1">Al-wahaa Winter Hotel</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_2">Restaurant Project</span><span class="project-tag"
+                                    data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_3">Restaurant & Global Agencies Project</span><span
+                                    class="project-tag" data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_4">Mall and International Agencies</span><span
+                                    class="project-tag" data-translate-key="tag_Oman">Oman</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_5">Café and Restaurant Management Project</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_6">Feasibility Study - Al-Buqayq Café</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_7">Feasibility Study: Restaurant Competitor
+                                    Analysis</span><span class="project-tag" data-translate-key="tag_Oman">Oman</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_8_8">Financial Study - Al-Naseem District Hotel</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 8: Industrial & Factory Projects -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/industrial_factory_blue_green.png" alt="Industrial Projects"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_9_count">(7 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-truck"></i>
+                            <span data-translate-key="cat_9_title">8.Industrial & Factory Projects</span>
+                        </div>
+                        <div class="project-list" id="wc-8">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_1">Medical Devices Center</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_2">Vegetable Store</span><span class="project-tag"
+                                    data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_3">Feasibility Study - Laundry Development</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_4">Feasibility Study - Expansion of Qanadil Furniture
+                                    Factory</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_5">Feasibility Study - One Store</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_6">Expansion of Dawatec Factory</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_9_7">Block Factory</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 9: Real Estate & Development -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/real_estate_blue_green.png" alt="Real Estate" class="work-card-image"
+                            loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_10_count">(9 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-city"></i>
+                            <span data-translate-key="cat_10_title">9. Real Estate & Development</span>
+                        </div>
+                        <div class="project-list" id="wc-9">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_1">Real Estate Development Company</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_2">Exhibition & Conference Hall</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_3">Feasibility Study - Care We Shop</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_4">Feasibility Study - Skin Care Products Factory</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_5">Hotel Complex Expansion</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_6">Residential Complex Investment Study</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_7">Commercial Mall Development Study</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_8">Real Estate Fund Valuation</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_10_9">Strategic Plan for Real Estate Marketing
+                                    Company</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 10: Other Specialized Projects -->
+                <div class="work-card">
+                    <div class="work-card-image-container">
+                        <img src="images/specialized_projects_blue_green.png" alt="Specialized Projects"
+                            class="work-card-image" loading="lazy">
+                        <span class="work-card-badge" data-translate-key="cat_11_count">(7 Projects)</span>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-card-title">
+                            <i class="fas fa-cogs"></i>
+                            <span data-translate-key="cat_11_title">10. Other Specialized Projects</span>
+                        </div>
+                        <div class="project-list" id="wc-10">
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_1">Feasibility Study - Project for Distribution and
+                                    Supply of Automotive Oils and Filters</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_2">Sahm Company Project</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_3">Feasibility Study for Developing a Smart Car
+                                    Battery</span><span class="project-tag" data-translate-key="tag_UAE">UAE</span>
+                            </div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_4">Project for Renting Waste Containers and Construction
+                                    Debris</span><span class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_5">Feasibility Study - Car Repair Shop</span><span
+                                    class="project-tag" data-translate-key="tag_ksa">KSA</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_6">Market Size Measurement - Project for Selling Spare
+                                    Parts for Used Cars</span><span class="project-tag"
+                                    data-translate-key="tag_UK">Britain</span></div>
+                            <div class="project-item"><i class="fas fa-chevron-right"></i><span
+                                    data-translate-key="proj_11_7">Autologous Bone Marrow Technology</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔻 FOOTER - الفوتر
+         ======================================== -->
+    <footer class="py-8 border-t bg-[#0a2472]">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4 flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-white/70 hover:text-white transition-colors text-3xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-white/70 hover:text-white transition-colors text-3xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:R.albrenjy20@gmail.com"
+                    class="text-white/70 hover:text-white transition-colors text-3xl">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-white/60 font-medium" data-translate-key="footer_text">جميع الحقوق محفوظة | Rama Albringi
+                راما البرنجي</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

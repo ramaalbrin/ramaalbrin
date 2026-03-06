@@ -1,0 +1,736 @@
+/* ========================================
+
+   🎨 GLOBAL STYLES - الأنماط العامة
+
+   ======================================== */
+
+* {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
+/* خلفية متحركة بتأثير الشفق القطبي */
+.aurora-bg {
+    position: relative;
+    /* خلفية بيضاء نقية */
+    background: #ffffff;
+}
+
+/* تأثير الموجات الهادئة - تظهر في كل الصفحات */
+.aurora-bg::before {
+    display: none;
+}
+
+/* حركة الموجات */
+@keyframes waveMove {
+
+    0%,
+    100% {
+        transform: translateY(0px) scaleY(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scaleY(1.05);
+    }
+}
+
+/* طبقة إضافية للموجات المتقاطعة */
+.aurora-bg::after {
+    display: none;
+}
+
+/* حركة دوران بطيئة للموجات */
+@keyframes waveRotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+/* النقاط الكبيرة الملونة لصفحة الهوم */
+.home-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatParticle 15s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -50px) scale(1.2);
+    }
+
+    50% {
+        transform: translate(-20px, -100px) scale(0.9);
+    }
+
+    75% {
+        transform: translate(40px, -70px) scale(1.1);
+    }
+}
+
+/* ألوان النقاط - تدرجات زرقاء */
+.particle-green {
+    background: #93c5fd;
+}
+
+.particle-blue {
+    background: #bfdbfe;
+}
+
+.particle-purple {
+    background: #c7d2fe;
+}
+
+.particle-pink {
+    background: #ddd6fe;
+}
+
+@keyframes aurora {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* طبقة التأثيرات الضوئية فوق الخلفية */
+.aurora-overlay {
+    display: none;
+}
+
+/* نص بتدرج ألوان - أزرق ذهبي مميز */
+.gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 50%, #bfdbfe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.25em;
+    /* لإصلاح اقتطاع الحروف العربية من الأسفل */
+    line-height: normal;
+}
+
+/* تأثير الحركة العائمة */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* تأثير الظهور من الأسفل */
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* تأثيرات Hover للكروت */
+.card-hover {
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.card-hover.green-glow:hover {
+    border-color: #538AB8;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(83, 138, 184, 0.3);
+}
+
+/* ========================================
+   📱 NAVIGATION - قسم التنقل
+   ======================================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(10, 36, 114, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    direction: ltr !important;
+}
+
+.nav-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem 2%;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* اللوغو - دائمًا في أقصى اليسار */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 60;
+    order: 1;
+    margin: 0;
+}
+
+/* قائمة الديسكتوب - دائمًا في أقصى اليمين */
+.desktop-menu {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    order: 2;
+    flex: 1;
+    justify-content: right;
+}
+
+/* زرار اللغة لوحده في أقصى اليمين */
+.desktop-menu .lang-btn {
+    margin-left: auto;
+}
+
+.desktop-menu a {
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.desktop-menu a.active-page {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* الكروت */
+.bg-light-card {
+    background-color: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+}
+
+.desktop-menu a:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* زر تبديل اللغة - ديسكتوب */
+.desktop-menu .lang-btn {
+    padding: 0.7rem 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 900;
+}
+
+.desktop-menu .lang-btn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* زر القائمة للموبايل - دائمًا في اليمين */
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 60;
+    padding: 0.5rem;
+    order: 3;
+    margin-left: auto;
+}
+
+/* القائمة المنسدلة للموبايل */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    transition: right 0.3s ease;
+    z-index: 55;
+    padding: 5rem 2rem 2rem;
+    border-left: 1px solid rgba(147, 197, 253, 0.3);
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 1rem 0;
+    color: #1e3a5f;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.mobile-menu a.active-page {
+    background: rgba(147, 197, 253, 0.3) !important;
+    color: #1e3a5f !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.mobile-menu a:hover {
+    color: #2563eb;
+    padding-left: 1rem;
+}
+
+/* زر اللغة للموبايل */
+.mobile-lang-btn {
+    padding: 0.7rem 2rem;
+    background: #eff6ff;
+    border: none;
+    color: #2563eb;
+    border-radius: 9999px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 900;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.mobile-lang-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px rgba(147, 197, 253, 0.5);
+}
+
+/* عرض قائمة الديسكتوب على الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .desktop-menu {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    .mobile-menu,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+    }
+}
+
+/* ========================================
+   🖼️ ABOUT - قسم عني (الصورة الشخصية)
+   ======================================== */
+.large-circular-image {
+    width: 320px;
+    height: 320px;
+    border: 3px solid #538AB8;
+    border-radius: 50%;
+    padding: 0;
+    margin: -30px auto 20px auto;
+    box-shadow: 0 0 15px rgba(83, 138, 184, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.large-circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* أحجام مختلفة للصورة حسب حجم الشاشة */
+@media (min-width: 768px) {
+    .large-circular-image {
+        width: 380px;
+        height: 380px;
+        margin-right: -10px;
+        margin-left: 120px;
+        margin-top: -40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .large-circular-image {
+        width: 480px;
+        height: 480px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .large-circular-image {
+        width: 530px;
+        height: 530px;
+    }
+}
+
+/* ========================================
+   📂 WORK SECTION - قسم الأعمال (Accordion)
+   ======================================== */
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(147, 197, 253, 0.15);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+/* رأس الأكورديون */
+.accordion-header {
+    background-color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #1e3a5f;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    border: 1px solid #93c5fd;
+    box-shadow: 0 0 15px rgba(147, 197, 253, 0.2);
+}
+
+/* أيقونة التصنيف */
+.accordion-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+    background: linear-gradient(135deg, #93c5fd, #c7d2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 4px rgba(147, 197, 253, 0.5));
+}
+
+/* محتوى الأكورديون */
+.accordion-content {
+    background-color: #f8faff;
+    padding: 0 1rem;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    color: #2563eb;
+}
+
+.accordion-content.active {
+    max-height: 1500px;
+    padding: 1rem;
+}
+
+/* عنوان المشروع داخل الأكورديون */
+.accordion-title {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(147, 197, 253, 0.5);
+}
+
+.accordion-title:last-child {
+    border-bottom: none;
+}
+
+/* السهم بجانب اسم المشروع */
+.accordion-title .arrow {
+    color: #93c5fd;
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+    min-width: 0.75rem;
+}
+
+/* تاج الدولة */
+.project-tag-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    align-items: center;
+}
+
+.project-tag {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgba(147, 197, 253, 0.15);
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   🌍 RTL SUPPORT - دعم اللغة العربية
+   ======================================== */
+.rtl-mode {
+    text-align: right;
+}
+
+.rtl-mode .space-x-8>* {
+    margin-left: 0 !important;
+    margin-right: 2rem !important;
+}
+
+.rtl-mode .space-x-8>*:first-child {
+    margin-right: 0 !important;
+}
+
+.rtl-mode .pl-8 {
+    padding-left: 0;
+    padding-right: 2rem;
+    border-left: none;
+    border-right: 2px solid;
+}
+
+.rtl-mode .pl-8 .absolute {
+    left: auto;
+    right: -2px;
+}
+
+.rtl-mode .text-left {
+    text-align: right;
+}
+
+.rtl-mode .ml-4 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+.rtl-mode .space-x-4>* {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+.rtl-mode .space-x-4>*:first-child {
+    margin-right: 0 !important;
+}
+
+.rtl-mode .large-circular-image {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .rtl-mode .large-circular-image {
+        margin-left: -10px;
+        margin-right: 120px;
+    }
+}
+
+.rtl-mode .accordion-icon {
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+.rtl-mode .accordion-title .arrow {
+    margin-left: 0.5rem;
+    margin-right: 0;
+    transform: rotate(180deg);
+}
+
+.rtl-mode .project-tag-container {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.rtl-mode .project-tag {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+body {
+    color: #1e3a5f !important;
+}
+
+.text-gray-200 {
+    color: #2c4a6e !important;
+}
+
+.text-gray-400 {
+    color: #3d5f85 !important;
+}
+
+.text-gray-500 {
+    color: #4a6d9a !important;
+}
+
+/* لون النجوم في آراء العملاء */
+.fa-star {
+    color: #fbbf24 !important;
+    /* لون أصفر */
+}
+
+/* ========================================
+   🔗 ACTIVE PAGE - الصفحة النشطة
+   ======================================== */
+.desktop-menu a.active-page {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* Logo as link */
+a.logo {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ========================================
+   🎠 CAROUSEL STYLES - تنسيقات الكاروسيل
+   ======================================== */
+.carousel-slide {
+    box-sizing: border-box;
+}
+
+.carousel-slide>div {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* RTL Carousel Support */
+.rtl-mode #carousel-track {
+    direction: ltr;
+}
+
+.rtl-mode #carousel-prev i {
+    transform: rotate(180deg);
+}
+
+.rtl-mode #carousel-next i {
+    transform: rotate(180deg);
+}
+
+.rtl-mode .fa-arrow-left {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   🔘 NAVBAR CTA BUTTON - زر الأكشن في النافبار
+   ======================================== */
+.nav-cta-btn {
+    background: #2563eb !important;
+    color: white !important;
+    padding: 0.6rem 1.25rem !important;
+    border-radius: 9999px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-cta-btn:hover {
+    background: #1d4ed8 !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+    color: #ffffff !important;
+}
+
+.mobile-menu .nav-cta-btn {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem !important;
+    font-size: 1.1rem;
+}

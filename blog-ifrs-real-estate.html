@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Titles and Description -->
+    <title>How to Account for Real Estate according to IFRS | Rama Albringi</title>
+    <meta name="description"
+        content="A comprehensive guide on the accounting treatment of real estate according to International Financial Reporting Standards (IFRS). Learn the difference between investment properties, inventory, and fixed assets.">
+    <meta name="keywords"
+        content="Real estate accounting, IFRS, International Standards, Rama Albringi, Investment Properties, IAS 40, IAS 16, IFRS 5, Financial Modeling">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="How to Account for Real Estate according to IFRS | Rama Albringi">
+    <meta property="og:description"
+        content="A professional guide on classifying real estate in financial statements based on its intended use and future purpose.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/ifrs_real_estate_accounting.png">
+    <meta property="og:url" content="https://nermeennoaman.github.io/portfolio-Rama-/blog-ifrs-real-estate.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .article-content {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: #1a3d4f;
+            font-size: 1.125rem;
+        }
+
+        .article-content h1 {
+            color: #2563eb;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            color: #2563eb;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2563eb;
+            /* Changed to border-left for LTR */
+            padding-left: 1rem;
+            /* Changed to padding-left for LTR */
+        }
+
+        .article-content h3 {
+            color: #2c5066;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            /* Changed to padding-left for LTR */
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .article-content li::before {
+            content: "\2022";
+            color: #2563eb;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            /* Changed to margin-left for LTR */
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white !important;
+            border-radius: 9999px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            margin: 2rem 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .info-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            /* Changed to border-left for LTR */
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            font-size: 1rem;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#2563eb',
+                        'secondary': '#eff6ff',
+                        'light-bg': '#ffffff',
+                        'dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light-bg text-dark font-cairo">
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo gradient-text" data-translate-key="hero_name">Rama Albringi</div>
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="index.html#experience" data-translate-key="nav_experience">Experience</a></li>
+                    <li><a href="index.html#consulting" data-translate-key="nav_consultations">Consulting</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" class="active-page" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#testimonials" data-translate-key="nav_testimonials">Reviews</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">
+                        <span class="lang-text">العربية</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <a href="index.html#contact" class="nav-cta-btn ml-2" data-translate-key="nav_order_service">
+                        Book Your Service
+                    </a>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" onclick="closeMobileMenu()" data-translate-key="nav_home">Home</a>
+        <a href="index.html#about" onclick="closeMobileMenu()" data-translate-key="nav_about">About</a>
+        <a href="index.html#experience" onclick="closeMobileMenu()" data-translate-key="nav_experience">Experience</a>
+        <a href="index.html#consulting" onclick="closeMobileMenu()"
+            data-translate-key="nav_consultations">Consulting</a>
+        <a href="work.html" onclick="closeMobileMenu()" data-translate-key="nav_work">Portfolio</a>
+        <a href="blog.html" class="active-page" onclick="closeMobileMenu()" data-translate-key="nav_blog">Blog</a>
+        <a href="index.html#testimonials" onclick="closeMobileMenu()" data-translate-key="nav_testimonials">Reviews</a>
+        <a href="index.html#contact" onclick="closeMobileMenu()" data-translate-key="nav_contact">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book
+            Your Service</a>
+    </div>
+
+    <!-- ARTICLE SECTION -->
+    <section class="pt-32 pb-20 px-6" id="article-section">
+        <div class="container mx-auto max-w-4xl">
+
+            <!-- Title & Metadata -->
+            <div class="mb-12">
+                <div class="mb-8">
+                    <a href="blog.html"
+                        class="text-aurora-green font-semibold hover:underline flex items-center gap-2 w-fit">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate-key="art_food_back">Back to Blog</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-sm font-bold text-aurora-green uppercase tracking-wider"
+                        data-translate-key="blog_2_category">IFRS</span>
+                    <span class="text-sm text-gray-400">•</span>
+                    <span class="text-sm text-gray-400" data-translate-key="blog_2_date">March 2026</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8"
+                    data-translate-key="art_re_title">
+                    How to Account for Real Estate according to International Financial Reporting Standards (IFRS)
+                </h1>
+
+                <!-- Featured Image -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl mb-12">
+                    <img src="images/ifrs_real_estate_accounting.png" alt="IFRS Real Estate Accounting" class="w-full">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="article-content">
+                <p data-translate-key="art_re_desc">
+                    Recording real estate accounting is not as simple as many think. The recording method primarily
+                    depends on the purpose of using the property and the company's future intentions, which are usually
+                    determined according to the plan approved by the Board of Directors.
+                </p>
+
+                <h2 data-translate-key="art_re_sec1_title">Key Accounting Treatments for Real Estate per IFRS:</h2>
+
+                <h3 data-translate-key="art_re_sec1_item1_title">🔹 1. Properties used as an administrative or
+                    operational headquarters – (IAS 16)</h3>
+                <p class="font-bold text-gray-600" data-translate-key="art_re_sec1_item1_sub">Property, Plant and
+                    Equipment (PPE)</p>
+                <ul>
+                    <li data-translate-key="art_re_sec1_item1_list1">The property is recorded as a fixed asset on the
+                        balance sheet.</li>
+                    <li data-translate-key="art_re_sec1_item1_list2">It is measured using either the cost model or the
+                        revaluation model.</li>
+                    <li data-translate-key="art_re_sec1_item1_list3">It is subject to annual depreciation over its
+                        estimated useful life.</li>
+                </ul>
+                <div class="info-box" data-translate-key="art_re_sec1_item1_extra">
+                    <strong>Additional Information:</strong> The residual value and useful life must be reviewed
+                    annually, and an impairment test performed when there are indicators of impairment.
+                </div>
+
+                <h3 data-translate-key="art_re_sec1_item2_title">🔹 2. Investment Properties – (IAS 40)</h3>
+                <p data-translate-key="art_re_sec1_item2_sub">Properties held to earn rentals or for capital
+                    appreciation, with two measurement options available:</p>
+                <ul>
+                    <li data-translate-key="art_re_sec1_item2_list1"><strong>Fair Value Model:</strong> Periodic
+                        revaluation without calculating depreciation, recording changes in profit and loss.</li>
+                    <li data-translate-key="art_re_sec1_item2_list2"><strong>Cost Model:</strong> Calculating
+                        depreciation while disclosing the fair value in the notes.</li>
+                </ul>
+                <div class="info-box" data-translate-key="art_re_sec1_item2_extra">
+                    <strong>Additional Information:</strong> The valuation methods used and the fair value hierarchy
+                    level must be disclosed.
+                </div>
+
+                <h3 data-translate-key="art_re_sec1_item3_title">🔹 3. Properties developed for sale – (IAS 2)</h3>
+                <p class="font-bold text-gray-600" data-translate-key="art_re_sec1_item3_sub">Inventory</p>
+                <ul>
+                    <li data-translate-key="art_re_sec1_item3_list1">Treated as inventory and measured at the lower of
+                        cost or net realizable value.</li>
+                    <li data-translate-key="art_re_sec1_item3_list2">Cost includes all direct and indirect development
+                        and construction costs.</li>
+                </ul>
+                <div class="info-box" data-translate-key="art_re_sec1_item3_extra">
+                    <strong>Additional Information:</strong> The net realizable value must be evaluated regularly,
+                    especially in volatile real estate markets.
+                </div>
+
+                <h3 data-translate-key="art_re_sec1_item4_title">🔹 4. Properties held for sale – (IFRS 5)</h3>
+                <p class="font-bold text-gray-600" data-translate-key="art_re_sec1_item4_sub">Non-current Assets Held
+                    for
+                    Sale</p>
+                <ul>
+                    <li data-translate-key="art_re_sec1_item4_list1">The property is reclassified when specific criteria
+                        for sale are met.</li>
+                    <li data-translate-key="art_re_sec1_item4_list2">Measured at the lower of carrying amount or fair
+                        value less costs to sell.</li>
+                    <li data-translate-key="art_re_sec1_item4_list3">Depreciation stops from the date of
+                        reclassification.</li>
+                </ul>
+                <div class="info-box" data-translate-key="art_re_sec1_item4_extra">
+                    <strong>Additional Information:</strong> The sale must be probable within one year, with a committed
+                    management plan for the sale.
+                </div>
+
+                <div class="my-12 text-center">
+                    <a href="work.html"
+                        class="text-aurora-green font-bold text-xl hover:underline flex items-center justify-center gap-2">
+                        <i class="fas fa-layer-group"></i>
+                        <span data-translate-key="art_re_cta_work">View My Professional Work and Projects</span>
+                    </a>
+                </div>
+
+                <h2 data-translate-key="art_re_sec2_title">Additional Important Points:</h2>
+
+                <h3>🔹 <span data-translate-key="art_re_sec2_item1_title">Transfer Between Classifications:</span></h3>
+                <ul>
+                    <li data-translate-key="art_re_sec2_item1_list1">When changing the purpose of use, the property must
+                        be reclassified according to the appropriate standard.</li>
+                    <li data-translate-key="art_re_sec2_item1_list2">Transfers from or to investment properties require
+                        special accounting treatments.</li>
+                    <li data-translate-key="art_re_sec2_item1_list3">Reasons and effects of reclassification must be
+                        disclosed in the financial statements.</li>
+                </ul>
+
+                <h3>🔹 <span data-translate-key="art_re_sec2_item2_title">Impairment Test:</span></h3>
+                <ul>
+                    <li data-translate-key="art_re_sec2_item2_list1">All properties (except those measured at fair
+                        value) are subject to impairment testing per IAS 36.</li>
+                    <li data-translate-key="art_re_sec2_item2_list2">The test must be performed when there are
+                        indicators of impairment.</li>
+                </ul>
+
+                <h3>🔹 <span data-translate-key="art_re_sec2_item3_title">Disclosure Requirements:</span></h3>
+                <ul>
+                    <li data-translate-key="art_re_sec2_item3_list1">Accounting policies followed must be disclosed.
+                    </li>
+                    <li data-translate-key="art_re_sec2_item3_list2">Details of valuation methods and assumptions used.
+                    </li>
+                    <li data-translate-key="art_re_sec2_item3_list3">Reconciliation between opening and closing
+                        balances.
+                    </li>
+                    <li data-translate-key="art_re_sec2_item3_list4">Information on any restrictions on property
+                        disposal.</li>
+                </ul>
+
+                <hr class="my-12 border-gray-100">
+
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 italic mb-12">
+                    <p class="mb-0">
+                        <strong data-translate-key="art_re_conc_t">Conclusion:</strong> <span
+                            data-translate-key="art_re_conc">The real estate is the same, but its accounting treatment
+                            varies
+                            radically depending on the intention and purpose of use. Therefore, it is essential to
+                            determine
+                            the correct classification from the start and document the management decisions related to
+                            the
+                            properties to ensure compliance with IFRS and transparency in financial reporting.</span>
+                    </p>
+                </div>
+
+                <div class="text-center my-16">
+                    <p class="mb-4 font-bold text-gray-700 underline decoration-aurora-green decoration-2 underline-offset-4"
+                        data-translate-key="art_re_cta_consult_q">
+                        Do you need professional consultation on accounting for your company's real estate?</p>
+                    <a href="index.html#contact" class="cta-button" data-translate-key="art_re_cta_consult_btn">
+                        Request a Professional Consultation Now
+                    </a>
+                </div>
+
+                <!-- External LinkedIn Link -->
+                <div class="bg-[#eff6ff] p-6 rounded-xl border border-aurora-green/20">
+                    <h4 class="text-lg font-bold mb-3" data-translate-key="art_re_linkedin_title">LinkedIn Article Link:
+                    </h4>
+                    <a href="https://www.linkedin.com/pulse/%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D8%A7%D8%AA-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%8A%D8%A7-%D9%88%D9%81%D9%82%D8%A7-%D9%84%D9%85%D8%B9%D8%A7%D9%8A%D9%8A%D8%B1-%D8%A7%D9%84%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9-albringi-h97qe/?trackingId=TuOmupCXT6uDp9A%2Bn1b86Q%3D%3D"
+                        target="_blank" rel="noopener" class="text-aurora-green hover:underline flex items-center gap-2"
+                        data-translate-key="art_re_linkedin_link">
+                        <i class="fab fa-linkedin"></i>
+                        View and interact with this article on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                class="text-white/70 hover:text-white transition-colors text-3xl">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:R.albrenjy20@gmail.com" class="text-white/70 hover:text-white transition-colors text-3xl">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p class="text-white/60 font-bold text-lg">All Rights Reserved | Rama Albringi</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

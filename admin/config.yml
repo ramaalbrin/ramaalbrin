@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: ramaalbrin/ramaalbrin # مسار المستودع الخاص بك على جيت هاب
+  branch: main # اسم الفرع (غالباً main)
+  base_url: https://your-cloudflare-worker.workers.dev # (يجب تغييره إلى رابط Cloudflare Worker الخاص بك)
+
+media_folder: "assets/images/posts" # الفولدر الذي ستحفظ فيه الصور
+public_folder: "assets/images/posts" # المسار الذي سيتم استدعاء الصور منه
+
+# نستخدم طريقة حفظ البيانات في ملف JSON لكي يسهل على الجافاسكريبت قراءتها في موقع HTML عادي بدون سيرفر
+collections:
+  - name: "blog_admin"
+    label: "إدارة المحتوى"
+    files:
+      - label: "المقالات"
+        name: "posts"
+        file: "data/posts.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "العنوان", name: "title", widget: "string"}
+              - {label: "اسم الكاتب / المؤلف", name: "author", widget: "string"}
+              - {label: "تاريخ النشر", name: "date", widget: "datetime"}
+              - {label: "وصف المقال (Meta Description)", name: "description", widget: "string"}
+              - {label: "صورة الغلاف", name: "image", widget: "image"}
+              - {label: "محتوى المقال الكامل", name: "body", widget: "markdown"}

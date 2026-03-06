@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Titles and Description -->
+    <title>Rama Albringi Portfolio | راما البرنجي</title>
+    <meta name="description"
+        content="Rama Albringi - Financial Analyst, Feasibility Studies Expert, and Financial Modeling Consultant in Saudi Arabia and the Gulf.">
+    <meta name="keywords"
+        content="محلل مالي, دراسات جدوى, النمذجة المالية, استشارات مالية, راما البرنجي, Financial Analyst, Feasibility Studies, Financial Modeling, CFO">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="Rama Albringi Portfolio | راما البرنجي">
+    <meta property="og:description"
+        content="Specialized in Accounting, Financial Consulting, and Financial Modeling. Expert in Financial Modeling and preparing Feasibility Studies for projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nermeennoaman.github.io/portfolio-Rama-/">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rama Albringi Portfolio | راما البرنجي">
+    <meta name="twitter:description" content="Specialized in Accounting, Financial Consulting, and Financial Modeling.">
+
+
+
+    <!-- External Libraries -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <!-- Favicon -->
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2300ffaa;stop-opacity:1' /><stop offset='50%25' style='stop-color:%2300aaff;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23aa00ff;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='45' fill='%230a0e1a'/><text x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='url(%23grad)' text-anchor='middle'>R</text></svg>"
+        type="image/svg+xml">
+
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#2563eb',
+                        'secondary': '#eff6ff',
+                        'light-bg': '#f0f7ff',
+                        'light-card': '#ffffff',
+                        'light-border': '#bfdbfe',
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="aurora-bg">
+
+    <!-- خلفية التأثيرات -->
+    <div class="aurora-overlay"></div>
+
+    <!-- ========================================
+         📱 NAVIGATION SECTION - قسم التنقل
+         ======================================== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo gradient-text" data-translate-key="hero_name">Rama Albringi</div>
+
+                <!-- Desktop Menu -->
+                <ul class="desktop-menu">
+                    <li><a href="#home" class="active-page" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="#experience" data-translate-key="nav_experience">Experience</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" onclick="handleLanguageToggle()" id="lang-toggle-btn"
+                            style="margin: 0; padding: 0.8rem 1.25rem; font-size: 1rem;">
+                            العربية
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="active-page" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="#experience" data-translate-key="nav_experience" onclick="closeMobileMenu()">Experience</a>
+        <a href="work.html" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="#contact" class="nav-cta-btn" data-translate-key="nav_order_service" onclick="closeMobileMenu()">Book
+            Your Service</a>
+    </div>
+
+
+
+
+    <!-- ========================================
+
+         🏠 HOME SECTION - القسم الرئيسي
+
+         ======================================== -->
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative"
+        style="background-image: url('hero_dark_blue.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <!-- طبقة التغطية لضمان وضوح النص، تم تفتيحها لإظهار الصورة بشكل أفضل وتم إزالة النغمش -->
+        <div class="absolute inset-0 bg-[#0a2472]/70"></div>
+
+        <div class="container mx-auto px-6 text-center z-10 relative">
+
+            <div class="animate-slide-up">
+
+                <!-- الاسم (إزالة الظل القوي الذي أفسد لون التدرج) -->
+
+                <h1 class="text-6xl md:text-8xl font-bold mb-4 drop-shadow-md">
+
+                    <span class="gradient-text" data-translate-key="hero_name">Rama Albringi</span>
+
+                </h1>
+
+
+
+                <!-- الوظيفة -->
+                <p class="text-xl md:text-2xl text-white mb-8 font-semibold drop-shadow-sm"
+                    data-translate-key="hero_title">
+                    Financial Analyst | Feasibility Studies Expert | Management Consultant
+                </p>
+
+
+
+                <!-- الوصف -->
+                <p class="text-lg text-white max-w-2xl mx-auto mb-12 font-medium drop-shadow-sm"
+                    data-translate-key="hero_description">
+                    Specialized in Accounting, Financial Consulting & Feasibility Studies for Saudi and Gulf Projects.
+                </p>
+
+
+
+                <!-- الأزرار -->
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+
+                    <a href="work.html"
+                        class="px-8 py-3 bg-[#2563eb] rounded-full text-white font-semibold hover:shadow-lg transition transform hover:scale-105"
+                        data-translate-key="hero_view_work">
+                        View My Work
+                    </a>
+
+                    <a href="راما البرنجي.pdf" target="_blank"
+                        class="px-8 py-3 border-2 border-white rounded-full text-white font-semibold hover:bg-white hover:text-[#0a2472] transition transform hover:scale-105"
+                        data-translate-key="hero_download_portfolio">
+                        Download Portfolio
+                    </a>
+
+                </div>
+
+
+
+                <!-- روابط التواصل الاجتماعي -->
+
+                <div class="mt-12 flex justify-center gap-6">
+
+                    <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                        class="text-2xl text-white hover:text-blue-400 transition">
+
+                        <i class="fab fa-linkedin"></i>
+
+                    </a>
+
+                    <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                        class="text-2xl text-white hover:text-blue-400 transition">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </a>
+
+                    <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                        class="text-2xl text-white hover:text-blue-400 transition">
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- تمت إزالة النقاط المتحركة بناءً على طلبك -->
+
+    </section>
+
+
+
+
+
+    <!-- ========================================
+         👤 ABOUT SECTION - قسم عني
+         ======================================== -->
+
+    <section id="about" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-16 text-[#1e3a5f]" data-translate-key="about_title">About Me
+            </h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- النص -->
+                <div class="space-y-6 order-2 md:order-1">
+                    <p class="text-lg text-gray-700 leading-relaxed" data-translate-key="about_text_1">
+                        Hello, I'm Rama Albringi, a Certified Public Accountant (CPA) and Chief Financial Officer (CFO)
+                        with professional education from Syria...
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-translate-key="about_text_2">
+                        In addition to my executive and auditing background, I provide professional services in
+                        Accounting, Financial Consulting, Feasibility Studies, and Business Project Analysis...
+                    </p>
+
+                    <!-- الإحصائيات -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div
+                            class="bg-[#538AB8]/10 p-5 rounded-xl border border-[#538AB8]/20 text-center hover:bg-[#538AB8]/20 transition-all">
+                            <div class="text-3xl font-bold text-[#1e3a5f]">80+</div>
+                            <div class="text-sm text-gray-600 font-medium" data-translate-key="stat_projects">Projects
+                                Completed</div>
+                        </div>
+                        <div
+                            class="bg-[#538AB8]/10 p-5 rounded-xl border border-[#538AB8]/20 text-center hover:bg-[#538AB8]/20 transition-all">
+                            <div class="text-3xl font-bold text-[#1e3a5f]">100%</div>
+                            <div class="text-sm text-gray-600 font-medium" data-translate-key="stat_satisfaction">Client
+                                Satisfaction</div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <div
+                                class="max-w-xs mx-auto bg-[#538AB8]/10 p-5 rounded-xl border border-[#538AB8]/20 text-center hover:bg-[#538AB8]/20 transition-all">
+                                <div class="text-3xl font-bold text-[#1e3a5f]">10+</div>
+                                <div class="text-sm text-gray-600 font-medium" data-translate-key="stat_years">Years
+                                    Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الصورة الشخصية -->
+                <div class="relative flex justify-center md:justify-end items-center order-1 md:order-2">
+                    <div class="large-circular-image">
+                        <img src="Photo.png" alt="Rama Albringi Portfolio Photo" class="w-full h-full object-cover"
+                            onerror="this.style.border='3px solid #ff00aa'; this.style.backgroundColor='#1a1f2e'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.fontSize='40px'; this.outerHTML='<div class=\'large-circular-image flex items-center justify-center text-5xl bg-light-card border-none\'>📷</div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         💼 EXPERIENCE SECTION - قسم الخبرة العملية
+         ======================================== -->
+    <section id="experience" class="py-20 bg-light-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-[#1e3a5f]" data-translate-key="exp_title">Work
+                Experience</h2>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Experience 1: Assets Group -->
+                <div class="relative h-full transition-transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] p-8 rounded-xl shadow-xl border border-blue-800 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-white" data-translate-key="exp_assets_title">Financial
+                                Consultant | Assets Group</h3>
+                            <span class="text-base text-blue-200 font-medium" data-translate-key="exp_assets_date">Sep
+                                2025 - Present</span>
+                        </div>
+                        <p class="text-lg text-blue-100 font-semibold mb-3" data-translate-key="exp_assets_company">
+                            Assets Group - Remote</p>
+                        <p class="text-base text-blue-50 leading-relaxed" data-translate-key="exp_assets_desc">Provide
+                            financial consulting including financial analysis, feasibility studies, and strategic
+                            financial advisory.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-6">
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_assets_tag1">Financial Analysis</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_assets_tag2">Feasibility Studies</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_assets_tag3">Strategic Advisory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Gulf Experts -->
+                <div class="relative h-full transition-transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] p-8 rounded-xl shadow-xl border border-blue-800 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-white" data-translate-key="exp_gulf_title">Consultant
+                            </h3>
+                            <span class="text-base text-blue-200 font-medium"
+                                data-translate-key="exp_gulf_date">Present</span>
+                        </div>
+                        <p class="text-lg text-blue-100 font-semibold mb-3" data-translate-key="exp_gulf_company">Gulf
+                            Experts Observatory</p>
+                        <p class="text-base text-blue-50 leading-relaxed" data-translate-key="exp_gulf_desc">Deliver
+                            expert financial insights and advisory services for regional business initiatives.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-6">
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_gulf_tag1">Gulf Markets</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_gulf_tag2">Advisory</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_gulf_tag3">Regional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3: Remote Consultant -->
+                <div class="relative h-full transition-transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] p-8 rounded-xl shadow-xl border border-blue-800 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-white" data-translate-key="exp_remote_title">Remote
+                                Financial Consultant</h3>
+                            <span class="text-base text-blue-200 font-medium" data-translate-key="exp_remote_date">Dec
+                                2020 - Dec 2022</span>
+                        </div>
+                        <p class="text-lg text-blue-100 font-semibold mb-3" data-translate-key="exp_remote_company">
+                            Multinational Companies (KSA, UAE, Turkey)</p>
+                        <p class="text-base text-blue-50 leading-relaxed" data-translate-key="exp_remote_desc">Provided
+                            expert financial management and advisory including strategic planning and analysis.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-6">
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_remote_tag1">Multinational</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_remote_tag2">Accounting Systems</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_remote_tag3">Remote Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 4: Financial Auditor -->
+                <div class="relative h-full transition-transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] p-8 rounded-xl shadow-xl border border-blue-800 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-white" data-translate-key="exp_auditor_title">Financial
+                                Auditor</h3>
+                            <span class="text-base text-blue-200 font-medium" data-translate-key="exp_auditor_date">Dec
+                                2019 - Dec 2020</span>
+                        </div>
+                        <p class="text-lg text-blue-100 font-semibold mb-3" data-translate-key="exp_auditor_company">
+                            Syrian Family Planning Association (IPPF)</p>
+                        <p class="text-base text-blue-50 leading-relaxed" data-translate-key="exp_auditor_desc">
+                            Conducted comprehensive financial audits for projects funded by international organizations
+                            like UNDP and UNICEF.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-6">
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_auditor_tag1">Financial Audit</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_auditor_tag2">UNDP & UNICEF</span>
+                            <span class="px-3 py-1.5 bg-white/20 text-white font-medium text-xs rounded"
+                                data-translate-key="exp_auditor_tag3">Compliance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ========================================
+
+         🛠️ SERVICES SECTION - قسم الخدمات
+
+         ======================================== -->
+
+    <section id="services" class="py-20">
+
+        <div class="container mx-auto px-6">
+
+            <!-- العنوان -->
+
+            <h2 class="text-4xl font-bold text-center mb-12 text-[#1e3a5f]" data-translate-key="services_title">Services
+            </h2>
+
+
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+
+
+
+                <!-- الخدمة 1: التخطيط الاستراتيجي -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-sitemap text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_strategic_planning_title">
+                        Strategic Planning</h3>
+                    <p class="text-black-400" data-translate-key="service_strategic_planning_desc">
+                        Clear and effective strategies to define goals, enhance competitiveness, and ensure long-term
+                        sustainability.
+                    </p>
+                </div>
+
+                <!-- الخدمة 2: خطط الأعمال -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-file-alt text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_business_plans_title">Business
+                        Plans</h3>
+                    <p class="text-black-400" data-translate-key="service_business_plans_desc">
+                        Professional business plans for startups and SMEs to attract investors and guide strategic
+                        growth.
+                    </p>
+                </div>
+
+                <!-- الخدمة 3: دراسات الجدوى -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-chart-pie text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_feasibility_title">Feasibility
+                        Studies</h3>
+                    <p class="text-black-400" data-translate-key="service_feasibility_desc">
+                        Comprehensive project feasibility analysis including market, financial, and operational
+                        evaluations to ensure investment success.
+                    </p>
+                </div>
+
+                <!-- الخدمة 4: التقارير والتحليلات المالية -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-chart-line text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_financial_reports_title">
+                        Financial Reports & Analytics</h3>
+                    <p class="text-black-400" data-translate-key="service_financial_reports_desc">
+                        Preparation of advanced financial reports and analysis to support decision-making and project
+                        performance assessment.
+                    </p>
+                </div>
+
+                <!-- الخدمة 5: المحاسبة والمراجعة -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-calculator text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_accounting_auditing_title">
+                        Accounting & Auditing</h3>
+                    <p class="text-black-400" data-translate-key="service_accounting_auditing_desc">
+                        Preparation and review of financial statements, bookkeeping, and external auditing with accuracy
+                        and compliance.
+                    </p>
+                </div>
+
+                <!-- الخدمة 6: الاستشارات المالية -->
+                <div class="bg-light-card p-6 rounded-lg card-hover text-center green-glow">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-green flex items-center justify-center">
+                        <i class="fas fa-hand-holding-usd text-2xl text-light-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-translate-key="service_financial_consulting_title">
+                        Financial Consulting</h3>
+                    <p class="text-black-400" data-translate-key="service_financial_consulting_desc">
+                        Expert financial advice and project assessment for Saudi and Gulf companies to improve
+                        performance and profitability.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#contact"
+                    class="w-full md:w-auto px-12 py-5 bg-gradient-to-r from-aurora-green to-[#1d4ed8] rounded-2xl text-white font-bold text-xl hover:shadow-2xl hover:shadow-aurora-green/40 transition transform hover:scale-105 flex items-center justify-center gap-3"
+                    data-translate-key="nav_order_service">
+                    Book Your Service
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="javascript:void(0)" onclick="openFreelanceModal('khamsat')"
+                    class="w-full md:w-auto px-10 py-5 border-2 border-aurora-green text-aurora-green rounded-2xl font-bold text-lg hover:bg-aurora-green hover:text-white transition-all flex items-center justify-center gap-3 shadow-sm hover:shadow-md"
+                    data-translate-key="khamsat_view_all">
+                    See services on Khamsat
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         🤝 CONSULTING SECTION - قسم الاستشارات
+         ======================================== -->
+
+    <section id="consulting" class="py-20 bg-light-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-[#1e3a5f]" data-translate-key="nav_consultations">
+                Consulting</h2>
+            <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto" data-translate-key="consulting_subtitle">
+                I provide consulting services through trusted platforms
+            </p>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+
+                <!-- Platform 1: Gulf Experts Observatory -->
+                <a href="https://www.expertsgulf.com/experts/c6ac6e7a-c702-4fb5-bede-2cedf255e1a5" target="_blank"
+                    rel="noopener noreferrer"
+                    class="group bg-light-card p-8 rounded-2xl border border-light-border hover:border-aurora-green hover:shadow-xl hover:shadow-aurora-green/10 transition-all duration-300 transform hover:-translate-y-2 text-center block">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-globe-americas text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#1e3a5f] mb-2" data-translate-key="platform_kharij_label">Gulf
+                        Experts Observatory</h3>
+                    <p class="text-gray-600" data-translate-key="platform_kharij_desc">Financial Consultant at Gulf
+                        Experts Observatory</p>
+                </a>
+
+                <!-- Platform 2: Business Lounge -->
+                <a href="https://businesslounge.consulting/listings/504c0211/" target="_blank" rel="noopener noreferrer"
+                    class="group bg-light-card p-8 rounded-2xl border border-light-border hover:border-aurora-green hover:shadow-xl hover:shadow-aurora-green/10 transition-all duration-300 transform hover:-translate-y-2 text-center block">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0a2472] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-handshake text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#1e3a5f] mb-2" data-translate-key="platform_linking_label">
+                        Business Lounge Platform</h3>
+                    <p class="text-gray-600" data-translate-key="platform_linking_desc">Consultant at Business Lounge
+                        Platform</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================================
+         ⭐ TESTIMONIALS SECTION - قسم آراء العملاء
+         ======================================== -->
+
+    <section id="testimonials" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-[#1e3a5f]" data-translate-key="testimonials_title">
+                Client Testimonials</h2>
+
+            <div class="max-w-5xl mx-auto relative">
+                <!-- Carousel Arrows -->
+                <button onclick="moveCarousel(-1)" id="carousel-prev"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-16 z-10 w-12 h-12 bg-blue-500 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="moveCarousel(1)" id="carousel-next"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-16 z-10 w-12 h-12 bg-blue-500 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-blue-600 transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Carousel Viewport -->
+                <div class="overflow-hidden" id="carousel-viewport">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track">
+
+                        <!-- Review 1 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/1.jpg" alt="Client Review 1"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/2.jpg" alt="Client Review 2"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/3.jpg" alt="Client Review 3"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/4.jpg" alt="Client Review 4"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 5 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/5.jpg" alt="Client Review 5"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 6 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/6.jpg" alt="Client Review 6"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 7 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/7.jpg" alt="Client Review 7"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 8 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/8.jpg" alt="Client Review 8"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 9 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/9.jpg" alt="Client Review 9"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 10 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/10.jpg" alt="Client Review 10"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 11 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/11.jpg" alt="Client Review 11"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Review 12 -->
+                        <div class="carousel-slide w-full md:w-1/2 flex-shrink-0 px-3">
+                            <div
+                                class="bg-white rounded-xl border-[3px] border-[#3b82f6] h-64 md:h-72 flex flex-col shadow-sm overflow-hidden p-0 relative">
+                                <img src="assets/testimonials/12.jpg" alt="Client Review 12"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel Dots -->
+                <div class="flex justify-center gap-2 mt-8" id="carousel-dots"></div>
+
+                <!-- Freelance Platforms Ratings Links -->
+                <div class="mt-8 text-center flex justify-center gap-4">
+                    <button onclick="openModal('mostaqlModal')"
+                        class="px-8 py-3 bg-white border-2 border-[#1e3a5f] text-[#1e3a5f] rounded-full font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+                        <span data-translate-key="rating_mostaql">مستقل</span>
+                        <i class="fas fa-briefcase text-sm"></i>
+                    </button>
+                    <button onclick="openModal('khamsatModal')"
+                        class="px-8 py-3 bg-white border-2 border-[#1e3a5f] text-[#1e3a5f] rounded-full font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+                        <span data-translate-key="rating_khamsat">خمسات</span>
+                        <i class="fas fa-briefcase text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Platforms -->
+    <!-- Khamsat Modal -->
+    <div id="khamsatModal"
+        class="fixed inset-0 bg-gray-900/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div
+            class="bg-white rounded-2xl max-w-lg w-full p-8 text-center transform scale-95 transition-transform duration-300 shadow-2xl relative">
+            <div class="w-16 h-16 mx-auto bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fas fa-info-circle text-3xl text-[#1e3a5f]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#1e3a5f] mb-8" data-translate-key="contact_before_freelance">
+                رجاء التواصل معنا على الواتساب قبل طلب الخدمة على خمسات
+            </h3>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://khamsat.com/user/ramaalbringi/reviews" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 bg-[#1e3a5f] text-white rounded-xl font-bold hover:bg-[#152a46] transition-colors flex items-center justify-center gap-2 flex-1">
+                    <span data-translate-key="modal_continue">متابعة</span>
+                    <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+                <button onclick="closeModal('khamsatModal')"
+                    class="px-8 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-50 transition-colors flex-1"
+                    data-translate-key="modal_cancel">
+                    إلغاء
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mostaql Modal -->
+    <div id="mostaqlModal"
+        class="fixed inset-0 bg-gray-900/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div
+            class="bg-white rounded-2xl max-w-lg w-full p-8 text-center transform scale-95 transition-transform duration-300 shadow-2xl relative">
+            <div class="w-16 h-16 mx-auto bg-[#1e3a5f]/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fas fa-info-circle text-3xl text-[#1e3a5f]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#1e3a5f] mb-8" data-translate-key="contact_before_freelance_mostaql">
+                رجاء التواصل معنا على الواتساب قبل طلب الخدمة على مستقل
+            </h3>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://mostaql.com/u/Ramaalbringi/reviews" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 bg-[#1e3a5f] text-white rounded-xl font-bold hover:bg-[#152a46] transition-colors flex items-center justify-center gap-2 flex-1">
+                    <span data-translate-key="modal_continue">متابعة</span>
+                    <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+                <button onclick="closeModal('mostaqlModal')"
+                    class="px-8 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-50 transition-colors flex-1"
+                    data-translate-key="modal_cancel">
+                    إلغاء
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- ========================================
+
+         📞 CONTACT SECTION - قسم التواصل
+
+         ======================================== -->
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+
+            <!-- العنوان -->
+            <h2 class="text-4xl font-bold text-center mb-12 text-[#1e3a5f]" data-translate-key="contact_title">Get In
+                Touch</h2>
+
+            <!-- WhatsApp Icon -->
+            <div class="flex flex-col items-center justify-center mb-12">
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center gap-4 hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-[#25d366] to-[#128c7e] rounded-full flex items-center justify-center shadow-xl shadow-green-500/30 group-hover:shadow-green-500/50 ring-4 ring-green-50 transition-all">
+                        <i class="fab fa-whatsapp text-5xl text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-green-600" data-translate-key="contact_wa_text">Direct WhatsApp
+                        Chat</span>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="flex items-center justify-center gap-4 mb-12 max-w-sm mx-auto opacity-70">
+                <div class="h-px bg-gray-300 flex-1"></div>
+                <span class="text-gray-500 font-bold uppercase text-sm tracking-wider"
+                    data-translate-key="contact_or">OR EMAIL US</span>
+                <div class="h-px bg-gray-300 flex-1"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- نموذج الاتصال -->
+                <form class="space-y-6" action="https://formspree.io/f/mqeykygv" method="POST">
+                    <!-- الاسم -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" name="name" data-translate-key="contact_name_placeholder"
+                            placeholder="Your Name"
+                            class="w-full px-6 py-4 bg-light-card border border-light-border rounded-xl focus:outline-none focus:border-aurora-green transition-all text-lg"
+                            required>
+
+                        <!-- البريد الإلكتروني -->
+                        <input type="email" name="email" data-translate-key="contact_email_placeholder"
+                            placeholder="Your Email"
+                            class="w-full px-6 py-4 bg-light-card border border-light-border rounded-xl focus:outline-none focus:border-aurora-green transition-all text-lg"
+                            required>
+                    </div>
+
+                    <!-- الرسالة -->
+                    <textarea name="message" data-translate-key="contact_message_placeholder" placeholder="Your Message"
+                        rows="6"
+                        class="w-full px-6 py-4 bg-light-card border border-light-border rounded-xl focus:outline-none focus:border-aurora-green transition-all text-lg"
+                        required></textarea>
+
+                    <!-- صفحة إعادة التوجيه بعد الإرسال -->
+                    <input type="hidden" name="_next"
+                        value="https://nermeennoaman.github.io/portfolio-Rama-/thanks.html">
+
+                    <!-- زر الإرسال -->
+                    <div class="text-center">
+                        <button type="submit"
+                            class="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-aurora-green to-aurora-green rounded-xl text-light-bg font-bold text-lg hover:shadow-xl hover:shadow-aurora-green/40 transition transform hover:scale-105"
+                            data-translate-key="contact_send">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================================
+
+         🔻 FOOTER - الفوتر
+
+         ======================================== -->
+
+    <footer class="py-8 border-t bg-[#0a2472]">
+
+        <div class="container mx-auto px-6 text-center">
+
+            <!-- روابط التواصل الاجتماعي -->
+
+            <div class="mb-4 flex justify-center gap-6">
+
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-white/70 hover:text-white transition">
+
+                    <i class="fab fa-linkedin"></i>
+
+                </a>
+
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-white/70 hover:text-white transition">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                </a>
+
+                <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-white/70 hover:text-white transition">
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- حقوق النشر -->
+
+            <p class="text-white/60 font-medium" data-translate-key="footer_text">جميع الحقوق محفوظة | Rama Albringi
+                راما البرنجي</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================
+
+         🎬 JAVASCRIPT - الأكواد البرمجية
+
+         ======================================== -->
+
+    <script src="script.js"></script>
+
+    <!-- Carousel Script -->
+    <script>
+        let carouselIndex = 0;
+        const track = document.getElementById('carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.getElementById('carousel-dots');
+
+        function getSlidesPerView() {
+            return window.innerWidth >= 768 ? 2 : 1;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, slides.length - getSlidesPerView());
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const totalDots = getMaxIndex() + 1;
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full transition-all duration-300 ' +
+                    (i === carouselIndex ? 'bg-[#3b82f6] scale-125' : 'bg-[#3b82f6]/30 hover:bg-[#3b82f6]/50');
+                dot.onclick = () => goToSlide(i);
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateCarousel() {
+            const slideWidth = 100 / getSlidesPerView();
+            const offset = carouselIndex * slideWidth;
+            track.style.transform = `translateX(-${offset}%)`;
+
+            // Update dots
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                dot.className = 'w-3 h-3 rounded-full transition-all duration-300 ' +
+                    (i === carouselIndex ? 'bg-[#3b82f6] scale-125' : 'bg-[#3b82f6]/30 hover:bg-[#3b82f6]/50');
+            });
+
+            // Update arrow buttons
+            document.getElementById('carousel-prev').style.opacity = carouselIndex === 0 ? '0.4' : '1';
+            document.getElementById('carousel-next').style.opacity = carouselIndex >= getMaxIndex() ? '0.4' : '1';
+        }
+
+        function moveCarousel(direction) {
+            carouselIndex += direction;
+            if (carouselIndex < 0) carouselIndex = 0;
+            if (carouselIndex > getMaxIndex()) carouselIndex = getMaxIndex();
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            carouselIndex = index;
+            updateCarousel();
+        }
+
+        // Initialize
+        createDots();
+        updateCarousel();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            if (carouselIndex > getMaxIndex()) {
+                carouselIndex = getMaxIndex();
+            }
+            createDots();
+            updateCarousel();
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const viewport = document.getElementById('carousel-viewport');
+
+        viewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                moveCarousel(diff > 0 ? 1 : -1);
+            }
+        }, { passive: true });
+    </script>
+    <!-- Freelance Modal -->
+    <div id="freelanceModal"
+        class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-white rounded-2xl w-full max-w-md p-8 transform scale-95 transition-transform duration-300 shadow-2xl">
+            <div class="text-center mb-6">
+                <div
+                    class="w-16 h-16 bg-[#eff6ff] text-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#bfdbfe]">
+                    <i class="fas fa-info-circle text-3xl"></i>
+                </div>
+                <h3 id="freelanceModalText" class="text-xl font-bold text-[#1e3a5f] mb-4" style="line-height: 1.6;">
+                    <!-- Text will be set by JS -->
+                </h3>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button type="button" onclick="closeFreelanceModal()"
+                    class="w-full sm:w-1/2 px-6 py-3 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-colors"
+                    data-translate-key="btn_cancel">
+                    إلغاء
+                </button>
+                <a id="freelanceModalLink" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+                    onclick="setTimeout(closeFreelanceModal, 100)"
+                    class="w-full sm:w-1/2 px-6 py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#152e4f] shadow-md transition-colors text-center flex items-center justify-center gap-2 inline-flex">
+                    <span data-translate-key="btn_continue">متابعة</span>
+                    <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFreelanceModal(platform) {
+            const modal = document.getElementById('freelanceModal');
+            const modalText = document.getElementById('freelanceModalText');
+            const modalLink = document.getElementById('freelanceModalLink');
+
+            const isEnglish = (typeof currentLang !== 'undefined' && currentLang === 'en') || document.documentElement.lang === 'en';
+
+            if (platform === 'khamsat') {
+                modalText.innerText = isEnglish ? (typeof translations !== 'undefined' ? translations['en']['modal_khamsat_text'] : 'Please contact us on WhatsApp before requesting the service on Khamsat.')
+                    : (typeof translations !== 'undefined' ? translations['ar']['modal_khamsat_text'] : 'رجاء التواصل معنا على الواتساب قبل طلب الخدمة على خمسات');
+                modalLink.href = 'https://khamsat.com/user/ramaalbringi/services';
+            } else if (platform === 'mostaql') {
+                modalText.innerText = isEnglish ? (typeof translations !== 'undefined' ? translations['en']['modal_mostaql_text'] : 'Please contact us on WhatsApp before requesting the service on Mostaql.')
+                    : (typeof translations !== 'undefined' ? translations['ar']['modal_mostaql_text'] : 'رجاء التواصل معنا على الواتساب قبل طلب الخدمة على مستقل');
+                modalLink.href = 'https://mostaql.com/u/Ramaalbringi/reviews';
+            }
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modal.children[0].classList.remove('scale-95');
+        }
+
+        function closeFreelanceModal() {
+            const modal = document.getElementById('freelanceModal');
+            modal.classList.add('opacity-0');
+            modal.children[0].classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
