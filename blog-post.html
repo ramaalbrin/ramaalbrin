@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Rama Albringi</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Marked.js for Markdown conversion -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#0a2472',
+                        'secondary': '#fdfaf5',
+                        'light-bg': '#ffffff',
+                        'dark': '#0a2472',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #0a2472;
+        }
+
+        .blog-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
+            color: #0a2472;
+            border-left: 4px solid #800020;
+            padding-left: 1rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            color: #1a3d4f;
+            font-size: 1.125rem;
+        }
+
+        .blog-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.75rem;
+            color: #1a3d4f;
+        }
+    </style>
+</head>
+
+<body class="bg-light-bg text-dark font-cairo">
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="logo_r_final.webp" alt="Rama Albringi Logo" class="h-8 md:h-10 w-auto drop-shadow-sm">
+                </a>
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" class="active-page" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" onclick="handleLanguageToggle()" id="lang-toggle-btn">
+                            العربية
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="work.html" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" class="active-page" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="index.html#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book Your Service</a>
+    </div>
+
+    <!-- ARTICLE SECTION -->
+    <article class="pt-40 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl" id="post-container">
+            <!-- Loading indicator -->
+            <div class="text-center py-20" id="loading">
+                <div
+                    class="inline-block w-12 h-12 border-4 border-[#0a2472] border-t-transparent rounded-full animate-spin mb-4">
+                </div>
+                <p class="text-[#0a2472] font-bold" data-translate-key="loading_article">Loading Article...</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t-2 border-[#800020] bg-[#fdf8f2]">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8 flex justify-center gap-8">
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-[#0a2472] font-semibold text-lg" data-translate-key="footer_text">© 2026 جميع الحقوق محفوظة |
+                راما البرنجي</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            const container = document.getElementById('post-container');
+
+            if (postId === null) {
+                container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Post not found.</p>';
+                return;
+            }
+
+            fetch('data/posts.json')
+                .then(r => r.json())
+                .then(data => {
+                    const post = data.items[postId];
+                    if (!post) {
+                        container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Post not found.</p>';
+                        return;
+                    }
+
+                    document.title = `${post.title} | Rama Albringi`;
+                    const dateObj = new Date(post.date);
+                    const formattedDate = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+
+                    const html = `
+                        <div class="mb-12">
+                            <a href="blog.html" class="text-aurora-green font-bold hover:text-[#800020] inline-flex items-center gap-2 mb-8 transition-colors">
+                                <i class="fas fa-arrow-left"></i>
+                                <span data-translate-key="art_food_back">Back to Blog</span>
+                            </a>
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0a2472] mb-6 leading-tight">${post.title}</h1>
+                            <div class="flex items-center gap-6 text-gray-500 mb-10 border-b border-gray-100 pb-8">
+                                <span class="flex items-center gap-2 font-medium"><i class="fas fa-calendar-alt text-[#800020]"></i> ${formattedDate}</span>
+                                ${post.author ? `<span class="flex items-center gap-2 font-medium"><i class="fas fa-user text-[#800020]"></i> ${post.author}</span>` : ''}
+                            </div>
+                        </div>
+
+                        ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl mb-16 ring-1 ring-black/5"><img src="${post.image}" alt="${post.title}" class="w-full aspect-video object-cover"></div>` : ''}
+
+                        <div class="blog-content" dir="rtl">
+                            ${marked.parse(post.body || '')}
+                        </div>
+
+                        <div class="mt-20 pt-10 border-t border-gray-100">
+                             <a href="blog.html" class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
+                                <i class="fas fa-arrow-left"></i>
+                                <span data-translate-key="art_food_back">Back to Blog</span>
+                            </a>
+                        </div>
+                    `;
+                    container.innerHTML = html;
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Error loading post.</p>';
+                });
+        });
+    </script>
+</body>
+
+</html>

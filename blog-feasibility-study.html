@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="blog_fs1_head_title">Feasibility Study: The Complete Guide & Strategic Importance | Rama
+        Albringi</title>
+    <meta name="description"
+        content="Learn what a feasibility study is, its relationship with strategic planning, and why organizational and technical studies are critical for any new business idea."
+        data-translate-key="blog_fs1_meta_desc">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .article-content {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: #1a3d4f;
+            font-size: 1.125rem;
+        }
+
+        .article-content h1 {
+            color: #0a2472;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            color: #0a2472;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #800020;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            color: #800020;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #1a3d4f;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #0a2472 0%, #051a54 100%);
+            color: white !important;
+            border-radius: 9999px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(10, 36, 114, 0.3);
+            margin: 2rem 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #800020 0%, #a52a2a 100%);
+            box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+        }
+
+        .advantage-box {
+            background-color: #fdfaf5;
+            border: 1px solid #d4af37;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #800020;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#0a2472',
+                        'secondary': '#fdfaf5',
+                        'light-bg': '#ffffff',
+                        'dark': '#0a2472',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light-bg text-dark font-cairo">
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="logo_r_final.webp" alt="Rama Albringi Logo" class="h-8 md:h-10 w-auto drop-shadow-sm">
+                </a>
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" class="active-page" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" onclick="handleLanguageToggle()" id="lang-toggle-btn">
+                            العربية
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="work.html" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" class="active-page" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="index.html#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book Your Service</a>
+    </div>
+
+    <!-- ARTICLE SECTION -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+
+            <!-- Title & Metadata -->
+            <div class="mb-12">
+                <div class="mb-8">
+                    <a href="blog.html"
+                        class="text-aurora-green font-bold hover:text-[#800020] flex items-center gap-2 w-fit transition-colors">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate-key="art_food_back">Back to Blog</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-sm font-bold text-aurora-green uppercase tracking-wider"
+                        data-translate-key="blog_fs1_category">Business Strategy</span>
+                    <span class="text-sm text-gray-400">•</span>
+                    <span class="text-sm text-gray-400" data-translate-key="blog_fs1_date">March 2026</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8"
+                    data-translate-key="art_fs1_title">
+                    What is a Feasibility Study? The Ultimate Strategic Planning Guide
+                </h1>
+
+                <!-- Featured Image -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl mb-12">
+                    <img src="images/fs_overview.webp" alt="What is a Feasibility Study" class="w-full">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="article-content">
+                <h2 data-translate-key="art_fs1_intro_t">What Does "Feasibility Study" Mean?</h2>
+                <p data-translate-key="art_fs1_intro_d">
+                    A feasibility study is a rigorous evaluation conducted by an entrepreneur or business owner before
+                    launching a new project. Its primary purpose is to assess the viability and chances of success of
+                    the proposed idea.
+                </p>
+
+                <h2 data-translate-key="art_fs1_strat_t">The Relationship Between Feasibility Studies and Strategic
+                    Planning</h2>
+                <p data-translate-key="art_fs1_strat_d1">A feasibility study is about evaluating a new project, while
+                    strategic planning is the study of the best fields the organization can work in during the coming
+                    years and how it can compete in them. Strategic planning is broader than a feasibility study.</p>
+                <p data-translate-key="art_fs1_strat_d2">Despite this, there is a great similarity between them; both
+                    require studying the market, competitors, customers, influencing external factors, and available
+                    capabilities, ending with predicting the expected financial return.</p>
+
+                <h2 data-translate-key="art_fs1_consulting_t">Using Consulting Firms vs. Ready-made Feasibility Studies
+                </h2>
+                <p data-translate-key="art_fs1_consulting_d1">Consulting firms can be used to prepare a feasibility
+                    study, or one can rely on pre-prepared studies for certain projects. Using a consulting firm carries
+                    the cost of preparing the study but provides a custom analysis. Ready-made studies force you to
+                    restrict yourself to the presented projects, which are often traditional and lack innovation.</p>
+
+                <h2 data-translate-key="art_fs1_types_t">Advanced Types of Feasibility: Beyond Economics</h2>
+                <p data-translate-key="art_fs1_types_intro">It is a mistake to believe that feasibility only concerns
+                    numbers. In today's projects and information systems, the project is evaluated from several angles:
+                </p>
+
+                <h3 data-translate-key="art_fs1_type_org_t">1. Organizational Feasibility</h3>
+                <p data-translate-key="art_fs1_type_org_d">Focuses on how the project supports business strategy and
+                    priorities, and the extent of change the system will cause and its suitability for the
+                    organization's culture.</p>
+
+                <h3 data-translate-key="art_fs1_type_tech_t">2. Technical Feasibility</h3>
+                <p data-translate-key="art_fs1_type_tech_d">Required to ensure technical project needs are met, and the
+                    possibility of acquiring hardware or developing software and providing it on time with high
+                    efficiency.</p>
+
+                <h3 data-translate-key="art_fs1_type_eco_t">3. Economic Feasibility</h3>
+                <p data-translate-key="art_fs1_type_eco_d">Concerned with the benefits gained, and development and
+                    operating costs. Revenues and returns are estimated compared to tangible and intangible costs to
+                    ensure long-term profitability.</p>
+
+                <h2 data-translate-key="art_fs1_conc_t">Conclusion</h2>
+                <p data-translate-key="art_fs1_conc_d">A feasibility study answers one crucial question: "Is this
+                    project worth the investment?" By analyzing the idea organizationally, technically, and
+                    economically, you can reduce risks and draw a clear path for investment success. Therefore, this
+                    step should never be skipped.</p>
+
+                <div class="my-12 text-center">
+                    <a href="blog-feasibility-projects.html"
+                        class="text-aurora-green font-bold text-xl hover:text-[#800020] flex items-center justify-center gap-2 transition-colors w-fit mx-auto">
+                        <span data-translate-key="art_fs1_cta_next">Read Next: Project Feasibility Study
+                            Components</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- CTA SECTION -->
+                <div class="bg-gray-50 rounded-2xl p-10 mt-16 border border-gray-200 shadow-sm text-center">
+                    <h3 class="text-3xl font-bold mb-6 text-[#0a2472]" data-translate-key="art_fs_cta_q">Do you need a
+                        tailored Feasibility Study?</h3>
+                    <p class="text-gray-600 mb-10 text-lg max-w-2xl mx-auto" data-translate-key="art_fs_cta_sub">Let's
+                        create a custom, data-driven feasibility study that accurately reflects your unique market
+                        position and guarantees investor confidence.</p>
+                    <a href="index.html#contact" class="cta-button" data-translate-key="art_fs_cta_btn">
+                        Request a Professional Consultation Now
+                    </a>
+                </div>
+
+                <!-- Footer back link -->
+                <div class="mt-16 pt-8 border-t border-gray-100">
+                    <a href="blog.html"
+                        class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate-key="art_food_back">Back to Blog</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t-2 border-[#800020] bg-[#fdf8f2]">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8 flex justify-center gap-8">
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-[#0a2472] font-semibold text-lg" data-translate-key="footer_text">© 2026 جميع الحقوق محفوظة |
+                راما البرنجي</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

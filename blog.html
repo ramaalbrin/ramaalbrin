@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Titles and Description -->
+    <title>Blog | Rama Albringi</title>
+    <meta name="description"
+        content="Discover your comprehensive guide to Financial Planning & Analysis (FP&A) and how to transition towards dynamic budgeting and AI-augmented financial modeling.">
+    <meta name="keywords"
+        content="Financial Blog, Economic Articles, Feasibility Studies, Rama Albringi, Accounting Blog">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="Blog | Rama Albringi">
+    <meta property="og:description"
+        content="Discover the latest articles and tips in accounting, finance, and feasibility studies from expert Rama Albringi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nermeennoaman.github.io/portfolio-Rama-/blog.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rama Albringi",
+      "jobTitle": "Financial Consultant & CFO",
+      "url": "https://nermeennoaman.github.io/portfolio-Rama-/",
+      "sameAs": [
+        "https://www.linkedin.com/in/rama-albringi/",
+        "https://wa.me/963933933654"
+      ],
+      "description": "Certified Public Accountant (CPA) and Chief Financial Officer (CFO) with extensive experience in finance, accounting, and financial auditing.",
+      "knowsAbout": [
+        "Financial Analysis",
+        "Feasibility Studies",
+        "Financial Modeling",
+        "Accounting",
+        "Auditing"
+      ]
+    }
+    </script>
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#2563eb',
+                        'secondary': '#eff6ff',
+                        'light-bg': '#ffffff',
+                        'light-card': '#f0f7ff',
+                        'light-border': '#bfdbfe',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light-bg text-dark font-cairo">
+
+    <!-- ========================================
+         📱 NAVIGATION SECTION
+         ======================================== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="logo_r_final.webp" alt="Rama Albringi Logo" class="h-8 md:h-10 w-auto drop-shadow-sm">
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" class="active-page" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" aria-label="Toggle Language" onclick="handleLanguageToggle()"
+                            id="lang-toggle-btn" style="margin: 0; padding: 0.8rem 1.25rem; font-size: 1rem;">
+                            English
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="work.html" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" class="active-page" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="index.html#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" aria-label="Toggle Language"
+            onclick="handleLanguageToggle()">English</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book Your Service</a>
+    </div>
+
+    <!-- ========================================
+         📝 BLOG SECTION
+         ======================================== -->
+    <section class="min-h-[80vh] bg-white pt-32 pb-16 px-6">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h1 class="text-4xl font-bold text-center mb-4 text-[#1e3a5f]" data-translate-key="blog_title">Blog</h1>
+            <p class="text-center text-gray-500 mb-12 text-lg" data-translate-key="blog_subtitle">Discover the latest
+                articles and topics in finance, accounting, and financial modeling.</p>
+
+            <div class="max-w-4xl mx-auto space-y-16" id="blog-grid">
+                <!-- Article -2: Management Consulting -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-management-consulting.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/management_consulting.webp" alt="Management Consulting"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_mc_category">Management Consulting</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_mc_date">March 2026</span>
+                            </div>
+                            <a href="./blog-management-consulting.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_mc_title">The Complete Guide to Management Consulting:
+                                    Importance and Selecting a Consultant</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_mc_excerpt">Learn how a management consultant can transform
+                                your business, accelerate growth, improve operations, and guide you towards market
+                                dominance.</p>
+                            <a href="./blog-management-consulting.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article -1: Financial Modeling -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-financial-modeling.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/financial_modeling.webp" alt="Financial Modeling"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_fm_category">Financial Modeling</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_fm_date">March 2026</span>
+                            </div>
+                            <a href="./blog-financial-modeling.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_fm_title">The Complete Guide to Financial Modeling:
+                                    Concepts, Importance, and Practical Examples</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_fm_excerpt">Discover what financial modeling is and its crucial
+                                role in forecasting corporate performance, guiding data-driven investments, and
+                                executing advanced scenario analyses.</p>
+                            <a href="./blog-financial-modeling.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 0: Financial Analysis -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-financial-analysis.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/financial_analysis.webp" alt="Financial Analysis"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_fa_category">Financial Management</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_fa_date">March 2026</span>
+                            </div>
+                            <a href="./blog-financial-analysis.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_fa_title">The Comprehensive Guide to Financial Analysis:
+                                    Methods, Objectives & Examples</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_fa_excerpt">Learn how to accurately perform financial analysis
+                                to evaluate company profitability and stability, featuring practical examples from major
+                                Arab markets.</p>
+                            <a href="./blog-financial-analysis.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 1: Augmented FP&A -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-fpa-augmented.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/augmented_fpa_mindmap.webp" alt="Augmented FP&A"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider">FP&A</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-fpa-augmented.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_1_title">Financial Planning and Analysis (FP&A): The Strong
+                                    Foundation and the Shift Toward the Era Augmented by AI</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_1_excerpt">
+                                Discover your comprehensive guide to Financial Planning and Analysis (FP&A) and how to
+                                transition towards dynamic budgets and AI-augmented financial modeling.</p>
+                            <a href="./blog-fpa-augmented.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2: IFRS Real Estate Accounting -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-ifrs-real-estate.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/ifrs_real_estate_accounting.webp" alt="IFRS Real Estate"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider">IFRS</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-ifrs-real-estate.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_2_title">How to Account for Real Estate according to
+                                    International Financial Reporting Standards (IFRS)</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_2_excerpt">
+                                Learn how to record real estate accounting according to IFRS. Your comprehensive guide
+                                to accounting treatments based on usage purpose and future intention.</p>
+                            <a href="./blog-ifrs-real-estate.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3: 3PL Logistics -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-3pl-logistics.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/logistics_3pl_services.webp" alt="3PL Logistics Services"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="text-xs font-bold text-aurora-green uppercase tracking-wider">Logistics</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-3pl-logistics.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_3_title">Third-Party Logistics (3PL) Companies and Their
+                                    Services in the Supply Chain</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_3_excerpt">
+                                Understand the role of 3PL companies in warehousing and inventory management, and
+                                mastering the last mile to support e-commerce and reduce costs.</p>
+                            <a href="./blog-3pl-logistics.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4: Financial Leasing -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-financial-leasing.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/financial_leasing_concept.webp" alt="Financial Leasing for Project Finance"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="text-xs font-bold text-aurora-green uppercase tracking-wider">Finance</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-financial-leasing.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_4_title">Financial Leasing for Project Financing: A
+                                    Comprehensive Guide</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_4_excerpt">
+                                Learn about the benefits of financial leasing, how it differs from traditional loans,
+                                and when it is the best option for your project's growth.</p>
+                            <a href="./blog-financial-leasing.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5: Contract Automation -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-contract-automation.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/contract_automation_concept.webp" alt="Contract Management Automation"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider">Management &
+                                    Tech</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-contract-automation.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_5_title">Goodbye to Chaos: How Automating Lease Management
+                                    Turns Challenges into Opportunities for Growth</h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_5_excerpt">
+                                Learn how to transform manual contract management challenges into growth opportunities
+                                using advanced automation and Arabic-supporting systems.</p>
+                            <a href="./blog-contract-automation.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6: Food Delivery Expansion -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-food-delivery-expansion.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/food_delivery_expansion.webp" alt="Food Delivery Expansion"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="art_food_category">Strategy &
+                                    Growth</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="art_date_mar_26">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-food-delivery-expansion.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_6_title">
+                                    Proposals for Expanding Food Delivery Apps: Effective Growth Strategies for Success
+                                </h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed" data-translate-key="blog_6_excerpt">
+                                Discover a comprehensive analysis of expansion strategies for food delivery
+                                applications, spanning from the economic model, to customer experience, to advanced
+                                logistics solutions.
+                            </p>
+                            <a href="./blog-food-delivery-expansion.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 7: Feasibility Study Overview -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-feasibility-study.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/fs_overview.webp" alt="What is a Feasibility Study"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_fs1_category">Business Strategy</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_fs1_date">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-feasibility-study.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_fs1_head_title">
+                                    Feasibility Study: The Complete Guide & Strategic Importance | Rama Albringi
+                                </h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_fs1_excerpt">
+                                Learn what a feasibility study is, its relationship with strategic planning, and why
+                                organizational and technical studies are critical.
+                            </p>
+                            <a href="./blog-feasibility-study.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 8: Project Feasibility Components -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-feasibility-projects.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/fs_projects.webp" alt="Project Feasibility Study Components"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_fs2_category">Business Strategy</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_fs2_date">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-feasibility-projects.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_fs2_head_title">
+                                    Project Feasibility Study: Marketing, Financial & Economic Components | Rama
+                                    Albringi
+                                </h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_fs2_excerpt">
+                                Dive deep into the components of a project feasibility study, covering marketing,
+                                technical, financial, economic, social, and environmental analysis.
+                            </p>
+                            <a href="./blog-feasibility-projects.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 9: Feasibility Study Steps -->
+                <article class="border-b border-gray-100 pb-16 last:border-0">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <a href="./blog-feasibility-steps.html" class="md:w-1/3 block shrink-0">
+                            <img src="images/fs_steps.webp" alt="How to Make a Feasibility Study in 11 Steps"
+                                class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                        </a>
+                        <div class="md:w-2/3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-xs font-bold text-aurora-green uppercase tracking-wider"
+                                    data-translate-key="blog_fs3_category">Business Strategy</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-gray-400" data-translate-key="blog_fs3_date">March
+                                    2026</span>
+                            </div>
+                            <a href="./blog-feasibility-steps.html" class="block group">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight"
+                                    data-translate-key="blog_fs3_head_title">
+                                    How to Make a Feasibility Study in 11 Steps | Rama Albringi
+                                </h3>
+                            </a>
+                            <p class="text-gray-600 mb-6 text-base leading-relaxed"
+                                data-translate-key="blog_fs3_excerpt">
+                                A detailed roadmap on how to create a highly accurate feasibility study in 11 practical
+                                steps, guiding your project to guaranteed profitability.
+                            </p>
+                            <a href="./blog-feasibility-steps.html"
+                                class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                <span data-translate-key="read_more">Read More</span>
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔻 FOOTER
+         ======================================== -->
+    <footer class="py-8 border-t-2 border-[#800020] bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4 flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-[#0a2472]/60 hover:text-[#800020] transition" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-[#0a2472]/60 hover:text-[#800020] transition" aria-label="WhatsApp"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="text-2xl text-[#0a2472]/60 hover:text-[#800020] transition" aria-label="Email"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-[#0a2472]/60 font-medium" data-translate-key="footer_text">جميع الحقوق محفوظة | Rama Albringi
+                راما البرنجي</p>
+        </div>
+    </footer>
+    <div class="container mx-auto px-6 text-center">
+        <div class="mb-4 flex justify-center gap-6">
+            <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                class="text-white/70 hover:text-white transition-colors text-2xl">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                class="text-white/70 hover:text-white transition-colors text-2xl">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:R.albrenjy20@gmail.com" class="text-white/70 hover:text-white transition-colors text-2xl">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p class="text-white/60 font-medium" data-translate-key="footer_text">All Rights Reserved | Rama Albringi
+        </p>
+    </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Load dynamic CMS posts
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('data/posts.json').then(r => r.json()).then(data => {
+                if (data.items && data.items.length > 0) {
+                    const grid = document.getElementById('blog-grid');
+                    let dynamicHtml = '';
+                    // لعرض المقالات الأحدث أولاً
+                    data.items.slice().reverse().forEach((post, revIndex) => {
+                        const originalIndex = data.items.length - 1 - revIndex;
+                        const dateObj = new Date(post.date);
+                        const formattedDate = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+                        dynamicHtml += `
+                        <article class="border-b border-gray-100 pb-16 last:border-0 border-aurora-green/20">
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                ${post.image ? `<a href="./blog-post.html?id=${originalIndex}" class="md:w-1/3 block shrink-0">
+                                    <img src="${post.image}" class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                                </a>` : ''}
+                                <div class="${post.image ? 'md:w-2/3' : 'w-full'}">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <span class="text-xs font-bold text-aurora-green uppercase tracking-wider block">مقالات لوحة التحكم</span>
+                                        <span class="text-xs text-gray-400">•</span>
+                                        <span class="text-xs text-gray-400">${formattedDate}</span>
+                                    </div>
+                                    <a href="./blog-post.html?id=${originalIndex}" class="block group">
+                                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight">${post.title}</h3>
+                                    </a>
+                                    <p class="text-gray-600 mb-6 text-base leading-relaxed">${post.description || ''}</p>
+                                    <a href="./blog-post.html?id=${originalIndex}" class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                        <span>اقرأ المزيد</span>
+                                        <i class="fas fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        `;
+                    });
+                    if (grid) {
+                        grid.insertAdjacentHTML('afterbegin', dynamicHtml);
+                    }
+                }
+            }).catch(e => console.log('No dynamic posts found or error fetching posts.json'));
+        });
+    </script>
+</body>
+
+</html>

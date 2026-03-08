@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Titles and Description -->
+    <title data-translate-key="art_fpa_title">Financial Planning & Analysis (FP&A): The Strong Foundation and the Shift
+        Toward the Augmented Era | Rama Albringi</title>
+    <meta name="description"
+        content="A comprehensive guide on Financial Planning and Analysis (FP&A). Learn the basics, the differences from accounting, and how to transition towards FP&A augmented by AI and automation."
+        data-translate-key="blog_fpa_meta_desc">
+    <meta name="keywords"
+        content="Financial Planning, Financial Analysis, FP&A, AI in Finance, Dynamic Budgeting, Rama Albringi, Financial Forecasting, Strategic Analysis">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .article-content {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: #1a3d4f;
+            font-size: 1.125rem;
+        }
+
+        .article-content h1 {
+            color: #0a2472;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            color: #0a2472;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #800020;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            color: #800020;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #1a3d4f;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #0a2472 0%, #051a54 100%);
+            color: white !important;
+            border-radius: 9999px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(10, 36, 114, 0.3);
+            margin: 2rem 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #800020 0%, #a52a2a 100%);
+            box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+        }
+
+        .external-links {
+            background-color: #fdfaf5;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid #d4af37;
+            margin: 3rem 0;
+            border-left: 4px solid #800020;
+        }
+
+        .external-links a {
+            color: #0a2472;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+        .external-links a:hover {
+            color: #800020;
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aurora-green': '#0a2472',
+                        'secondary': '#fdfaf5',
+                        'light-bg': '#ffffff',
+                        'dark': '#0a2472',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light-bg text-dark font-cairo">
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="logo_r_final.webp" alt="Rama Albringi Logo" class="h-8 md:h-10 w-auto drop-shadow-sm">
+                </a>
+                <ul class="desktop-menu">
+                    <li><a href="index.html#home" data-translate-key="nav_home">Home</a></li>
+                    <li><a href="index.html#about" data-translate-key="nav_about">About</a></li>
+                    <li><a href="work.html" data-translate-key="nav_work">Portfolio</a></li>
+                    <li><a href="blog.html" class="active-page" data-translate-key="nav_blog">Blog</a></li>
+                    <li><a href="index.html#contact" data-translate-key="nav_contact">Contact</a></li>
+                    <li>
+                        <button class="lang-btn" onclick="handleLanguageToggle()" id="lang-toggle-btn">
+                            العربية
+                        </button>
+                    </li>
+                    <li class="ml-2">
+                        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service">
+                            Book Your Service
+                        </a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#home" data-translate-key="nav_home" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#about" data-translate-key="nav_about" onclick="closeMobileMenu()">About</a>
+        <a href="work.html" data-translate-key="nav_work" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="blog.html" class="active-page" data-translate-key="nav_blog" onclick="closeMobileMenu()">Blog</a>
+        <a href="index.html#contact" data-translate-key="nav_contact" onclick="closeMobileMenu()">Contact</a>
+        <button class="mobile-lang-btn" id="mobile-lang-toggle-btn" onclick="handleLanguageToggle()">العربية</button>
+        <a href="index.html#contact" class="nav-cta-btn" data-translate-key="nav_order_service"
+            onclick="closeMobileMenu()">Book Your Service</a>
+    </div>
+
+    <!-- ARTICLE SECTION -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+
+            <!-- Title & Metadata -->
+            <div class="mb-12">
+                <div class="mb-8">
+                    <a href="blog.html"
+                        class="text-aurora-green font-bold hover:text-[#800020] flex items-center gap-2 w-fit transition-colors">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate-key="art_food_back">Back to Blog</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-sm font-bold text-aurora-green uppercase tracking-wider"
+                        data-translate-key="nav_blog">FP&A</span>
+                    <span class="text-sm text-gray-400">•</span>
+                    <span class="text-sm text-gray-400" data-translate-key="art_date_mar_26">March 2026</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8"
+                    data-translate-key="art_fpa_title">
+                    Financial Planning and Analysis (FP&A): The Strong Foundation and the Shift Toward the Era Augmented
+                    by AI
+                </h1>
+
+                <img src="images/augmented_fpa_mindmap.webp" alt="Augmented FP&A Mindmap"
+                    class="w-full rounded-2xl shadow-xl mb-12">
+            </div>
+
+            <!-- Content -->
+            <div class="article-content">
+                <p data-translate-key="art_fpa_intro">
+                    In today's fast-paced business world, Financial Managers face increasing challenges that require
+                    quick and accurate decision-making. This is where Financial Planning and Analysis (FP&A) comes in as
+                    a vital, indispensable tool. Before talking about the evolution towards Augmented FP&A, which
+                    integrates advanced technologies like AI and automation, it is essential to understand the
+                    traditional foundation of FP&A and its significance in building a strong financial strategy.
+                </p>
+
+                <h2 data-translate-key="art_fpa_v2_q1_t">What is Financial Planning and Analysis (FP&A)?</h2>
+                <p data-translate-key="art_fpa_v2_q1_d">Financial Planning and Analysis (FP&A) is a set of strategic
+                    processes designed to help organizations plan, forecast, and budget accurately to support major
+                    business decisions and future financial stability. FP&A encompasses the following elements:</p>
+
+                <h3 data-translate-key="art_fpa_v2_comp_t">Core Components of FP&A:</h3>
+                <ul>
+                    <li data-translate-key="art_fpa_v2_comp_l1">Financial Planning: Establishing long-term and
+                        short-term financial strategies.</li>
+                    <li data-translate-key="art_fpa_v2_comp_l2">Budgeting: Allocating financial resources based on
+                        specified goals.</li>
+                    <li data-translate-key="art_fpa_v2_comp_l3">Financial Forecasting: Predicting future revenues,
+                        expenses, and cash flows.</li>
+                    <li data-translate-key="art_fpa_v2_comp_l4">Scenario Modeling: Analyzing "what-if" scenarios to
+                        evaluate the impact of different decisions.</li>
+                    <li data-translate-key="art_fpa_v2_comp_l5">Performance Reporting: Monitoring and analyzing actual
+                        financial performance against expectations.</li>
+                </ul>
+
+                <h2 data-translate-key="art_fpa_v2_diff_t">The Difference Between FP&A and Traditional Accounting</h2>
+                <p data-translate-key="art_fpa_v2_diff_d">It is crucial to understand that FP&A is not just accounting,
+                    although accounting plays a major role in the process. The main differences include:</p>
+                <div class="grid md:grid-cols-2 gap-8 my-8">
+                    <div class="p-6 bg-gray-50 rounded-2xl">
+                        <h4 class="font-bold text-[#800020] mb-4" data-translate-key="art_fpa_v2_diff_acc_t">Traditional
+                            Accounting:</h4>
+                        <ul class="space-y-2">
+                            <li data-translate-key="art_fpa_v2_diff_acc_l1">Focuses on past and current transactions.
+                            </li>
+                            <li data-translate-key="art_fpa_v2_diff_acc_l2">Records and documents financial events.</li>
+                            <li data-translate-key="art_fpa_v2_diff_acc_l3">Emphasizes accuracy and compliance with
+                                accounting standards.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-[#fdfaf5] rounded-2xl border border-[#f5e6d3]">
+                        <h4 class="font-bold text-[#0a2472] mb-4" data-translate-key="art_fpa_v2_diff_fpa_t">Financial
+                            Planning and Analysis (FP&A):</h4>
+                        <ul class="space-y-2">
+                            <li data-translate-key="art_fpa_v2_diff_fpa_l1">Looks to the future and focuses on strategic
+                                planning.</li>
+                            <li data-translate-key="art_fpa_v2_diff_fpa_l2">Analyzes data for informed decision-making.
+                            </li>
+                            <li data-translate-key="art_fpa_v2_diff_fpa_l3">Helps organizations adapt proactively to
+                                market shifts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 data-translate-key="art_fpa_v2_imp_t">Importance of Traditional FP&A in Organizations</h2>
+                <h3 data-translate-key="art_fpa_v2_imp_1_t">1. Measuring Financial Health</h3>
+                <p data-translate-key="art_fpa_v2_imp_1_d">FP&A helps organizations assess their financial health
+                    through indicators such as cash coverage ratio, current and quick ratios, debt-to-equity ratio,
+                    alongside profitability and liquidity metrics.</p>
+
+                <h3 data-translate-key="art_fpa_v2_imp_2_t">2. Supporting Strategic Decision-Making</h3>
+                <p data-translate-key="art_fpa_v2_imp_2_d">FP&A answers vital questions like: Should we raise debt or
+                    equity financing? What is the impact of an acquisition or divestiture on financial results? How much
+                    should be invested in property and equipment and when? And what is the company's break-even point?
+                </p>
+
+                <h3 data-translate-key="art_fpa_v2_imp_3_t">3. Risk Management and Future Planning</h3>
+                <p data-translate-key="art_fpa_v2_imp_3_d">Mitigating risk through "what-if" scenario analysis,
+                    predicting the impact of decisions on cash flow and profit margins, and creating dynamic operational
+                    and financial plans that allow for multiple scenarios.</p>
+
+                <h2 data-translate-key="art_fpa_v2_cycle_t">Key Processes in the FP&A Cycle</h2>
+                <div class="indicator-box">
+                    <strong data-translate-key="art_fpa_v2_cycle_1_t">Data Gathering and Analysis:</strong>
+                    <span data-translate-key="art_fpa_v2_cycle_1_d">Using current and historical financial data,
+                        integrating operational and external data (market trends), and validating data accuracy.</span>
+                </div>
+                <div class="indicator-box">
+                    <strong data-translate-key="art_fpa_v2_cycle_2_t">Forecasting and Budgeting:</strong>
+                    <span data-translate-key="art_fpa_v2_cycle_2_d">Estimating expenses needed to execute company plans,
+                        allocating a budget for each business unit or function, and consolidating budgets into a master
+                        budget.</span>
+                </div>
+                <div class="indicator-box">
+                    <strong data-translate-key="art_fpa_v2_cycle_3_t">Performance Monitoring and Analysis:</strong>
+                    <span data-translate-key="art_fpa_v2_cycle_3_d">Analyzing sales, expenses, and profits, monitoring
+                        working capital and cash flows, and comparing actual results with estimates to conduct variance
+                        analysis.</span>
+                </div>
+
+                <h2 data-translate-key="art_fpa_v2_chal_t">Challenges Faced by Traditional FP&A</h2>
+                <ul>
+                    <li data-translate-key="art_fpa_v2_chal_l1">Slow Processes: Relying on manual processes is
+                        time-consuming and makes it difficult to update forecasts quickly.</li>
+                    <li data-translate-key="art_fpa_v2_chal_l2">Limited Scenario Analysis: According to the 2022 FP&A
+                        trends survey, only 6% of companies can run scenarios in real-time.</li>
+                    <li data-translate-key="art_fpa_v2_chal_l3">Reliance on Static Models: Difficulty integrating data
+                        from multiple sources and coping with rapid changes.</li>
+                </ul>
+
+                <div class="my-16 p-10 bg-[#0a2472] text-white rounded-3xl text-center shadow-xl">
+                    <h2 class="text-white border-left-0 mb-6" data-translate-key="art_fpa_v2_pt2_t"
+                        style="border:none; padding:0;">Part Two: The Shift Toward Augmented Financial Planning and
+                        Analysis</h2>
+                    <p class="text-blue-100 text-lg" data-translate-key="art_fpa_v2_pt2_d">After exploring the basics of
+                        traditional Financial Planning and Analysis in Part One, we now arrive at a critical tipping
+                        point. Augmented Financial Planning and Analysis (Augmented FP&A) is not just an incremental
+                        improvement, but a true revolution that redefines how finance teams operate.</p>
+                </div>
+
+                <h2 data-translate-key="art_fpa_v2_aug_t">What is Augmented FP&A?</h2>
+                <p data-translate-key="art_fpa_v2_aug_d">It is a revolutionary evolution that integrates advanced
+                    technology with traditional financial processes to create an intelligent and efficient system,
+                    characterized by three main pillars:</p>
+
+                <div class="space-y-6 my-8">
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                        <h3 class="mt-0" data-translate-key="art_fpa_v2_aug_p1_t">1. Artificial Intelligence and Machine
+                            Learning</h3>
+                        <p data-translate-key="art_fpa_v2_aug_p1_d">Revolutionizes FP&A by automating routine tasks,
+                            improving forecasting accuracy, and providing real-time insights. These systems can analyze
+                            complex datasets to identify patterns, trends, and enable instant anomaly detection.</p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                        <h3 class="mt-0" data-translate-key="art_fpa_v2_aug_p2_t">2. Intelligent Automation</h3>
+                        <p data-translate-key="art_fpa_v2_aug_p2_d">Reduces human errors, saves time (from days to
+                            hours), and allows analysts to focus on strategic analysis rather than administrative tasks.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                        <h3 class="mt-0" data-translate-key="art_fpa_v2_aug_p3_t">3. Cloud Computing</h3>
+                        <p data-translate-key="art_fpa_v2_aug_p3_d">Provides the technological foundation for instant
+                            data access from anywhere, improving cross-team collaboration and scalability.</p>
+                    </div>
+                </div>
+
+                <h2 data-translate-key="art_fpa_v2_tools_t">Top Software and Tools for Augmented FP&A</h2>
+                <ul>
+                    <li data-translate-key="art_fpa_v2_tools_l1">SAP Analytics Cloud: A comprehensive platform combining
+                        planning, analysis, and forecasting.</li>
+                    <li data-translate-key="art_fpa_v2_tools_l2">Oracle Fusion Cloud ERP: An integrated system with
+                        built-in AI capabilities.</li>
+                    <li data-translate-key="art_fpa_v2_tools_l3">Anaplan: Specialized in integrated planning and
+                        multi-dimensional analytics.</li>
+                    <li data-translate-key="art_fpa_v2_tools_l4">Workday Adaptive Planning: To deliver real-time
+                        financial forecasting.</li>
+                    <li data-translate-key="art_fpa_v2_tools_l5">Zeni AI: For automating accounting and spending for
+                        startups.</li>
+                </ul>
+
+                <h2 data-translate-key="art_fpa_v2_pt3_t">Part Three: Steps to Implement Augmented FP&A - A Practical
+                    Guide</h2>
+
+                <h3 data-translate-key="art_fpa_v2_step1_t">Step One: Data Gathering and Consolidation</h3>
+                <p data-translate-key="art_fpa_v2_step1_d">Data quality is the cornerstone. Internal sources (ERP, CRM)
+                    must be integrated with external sources (market data, economic indicators). AI plays a crucial role
+                    here by automatically cleaning data and standardizing formats.</p>
+
+                <h3 data-translate-key="art_fpa_v2_step2_t">Step Two: Multi-Scenario Planning</h3>
+                <p data-translate-key="art_fpa_v2_step2_d">Once data is consolidated, models based on different
+                    assumptions can be created:</p>
+                <ul>
+                    <li data-translate-key="art_fpa_v2_step2_l1">Optimistic Scenario: High growth and low costs.</li>
+                    <li data-translate-key="art_fpa_v2_step2_l2">Realistic Scenario: Moderate and sustainable growth.
+                    </li>
+                    <li data-translate-key="art_fpa_v2_step2_l3">Pessimistic Scenario: Sales decline and increased
+                        costs.</li>
+                </ul>
+
+                <h3 data-translate-key="art_fpa_v2_step3_t">Step Third: Dynamic Budgeting</h3>
+                <p data-translate-key="art_fpa_v2_step3_d">By bypassing traditional static budgets, dynamic budgeting
+                    offers extraordinary flexibility. The budget is updated automatically based on actual performance
+                    (Rolling Forecasts), allowing for rapid responses to opportunities and challenges.</p>
+
+                <div class="text-center my-16">
+                    <p class="mb-4 font-bold text-gray-700" data-translate-key="art_fpa_footer_q">Are you ready to lead
+                        the financial transformation in your organization?</p>
+                    <a href="index.html#contact" class="cta-button" data-translate-key="art_fpa_footer_btn">
+                        Request a service
+                    </a>
+                </div>
+
+                <div class="external-links">
+                    <h4 class="text-xl font-bold mb-4" data-translate-key="art_fpa_p3_linkedin">LinkedIn Article Links:
+                    </h4>
+                    <ul class="list-none p-0 ml-0">
+                        <li class="mb-3">
+                            <a href="https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D9%88%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A-fpa-rama-albringi-whije/?trackingId=e8r5%2Bi3FRBu19VQzrjC8kw%3D%3D"
+                                target="_blank" rel="noopener" data-translate-key="art_fpa_p3_l1">First Article Link</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%AC%D8%B2%D8%A1-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%84-%D9%86%D8%AD%D9%88-%D8%A7%D9%84%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D9%88%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A-%D8%A7%D9%84%D9%85%D8%B9%D8%B2%D8%B2-rama-albringi-jacie/?trackingId=kcIanDGcRuWYB4xtKPY1pg%3D%3D"
+                                target="_blank" rel="noopener" data-translate-key="art_fpa_p3_l2">Second Article
+                                Link</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%AC%D8%B2%D8%A1-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-%D8%AE%D8%B7%D9%88%D8%A7%D8%AA-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%A7%D9%84%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D9%88%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A-%D8%A7%D9%84%D9%85%D8%B9%D8%B2%D8%B2-rama-albringi-sfo4e/?trackingId=N3PH17isTK2c2eir57QNWA%3D%3D"
+                                target="_blank" rel="noopener" data-translate-key="art_fpa_p3_l3">Third Article Link</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer back link -->
+                <div class="mt-16 pt-8 border-t border-gray-100">
+                    <a href="blog.html"
+                        class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate-key="art_food_back">Back to Blog</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t-2 border-[#800020] bg-[#fdf8f2]">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8 flex justify-center gap-8">
+                <a href="https://www.linkedin.com/in/rama-albringi/" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/963933933654" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:R.albrenjy20@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="text-3xl text-[#0a2472] hover:text-[#800020] transition-all transform hover:scale-110"
+                    aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-[#0a2472] font-semibold text-lg" data-translate-key="footer_text">© 2026 جميع الحقوق محفوظة |
+                راما البرنجي</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
