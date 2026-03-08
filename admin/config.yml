@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 
 display_url: https://gorgeous-sherbet-4875bb.netlify.app
 media_folder: "assets/images/posts"
