@@ -298,6 +298,7 @@ const translations = {
         'nav_order_service': 'Book Your Service',
         'service_content_writing_title': 'Accounting & Financial Content Writing',
         'service_content_writing_desc': 'Specialized creative writing in the accounting and finance fields for websites and social media.',
+        'forlanso_view_all': 'See services on Forlanso',
         'khamsat_view_all': 'See services on Khamsat',
         'modal_khamsat_text': 'Please contact us on WhatsApp before requesting the service on Khamsat.',
         'modal_mostaql_text': 'Please contact us on WhatsApp before requesting the service on Mostaql.',
@@ -313,6 +314,7 @@ const translations = {
         'hero_view_work': 'View My Work',
 
         'hero_view_services': 'View My Services',
+        'hero_forlanso_account': 'Forlanso Account',
         'hero_view_portfolio': 'View My Portfolio',
         'hero_my_experience': 'My Experience',
 
@@ -1357,6 +1359,7 @@ const translations = {
         'nav_order_service': 'احجز خدمتك',
         'service_content_writing_title': 'كتابة محتوى محاسبي ومالي',
         'service_content_writing_desc': 'كتابة محتوى متطوّر ومبدع في المجال المحاسبي والمالي للمواقع وحسابات التواصل الاجتماعي.',
+        'forlanso_view_all': 'لمشاهدة الخدمات على فورلانسو',
         'khamsat_view_all': 'لمشاهدة الخدمات على خمسات',
         'modal_khamsat_text': 'رجاء التواصل معنا على الواتساب قبل طلب الخدمة على خمسات',
         'modal_mostaql_text': 'رجاء التواصل معنا على الواتساب قبل طلب الخدمة على مستقل',
@@ -1374,6 +1377,7 @@ const translations = {
         'hero_view_work': 'شاهد أعمالي',
 
         'hero_view_services': 'عرض خدماتي',
+        'hero_forlanso_account': 'حساب فورلانسو',
         'hero_view_portfolio': 'عرض أعمالي',
         'hero_my_experience': 'خبرتي العملية',
 
@@ -2592,9 +2596,14 @@ function translatePage(lang) {
 
     if (heroImageColumn && heroTextColumn) {
         if (isArabic) {
-            // In RTL, order: 2 is Left, order: 1 is Right
-            heroImageColumn.style.order = "2";
-            heroTextColumn.style.order = "1";
+            // In RTL, we want the Image on the Left (order 2) and Text on the Right (order 1) for Desktop
+            heroImageColumn.style.order = "";
+            heroTextColumn.style.order = "";
+            heroImageColumn.classList.add('lg:order-2');
+            heroImageColumn.classList.remove('lg:order-1');
+            heroTextColumn.classList.add('lg:order-1');
+            heroTextColumn.classList.remove('lg:order-2');
+            
             heroTextColumn.classList.add('text-right');
             heroTextColumn.classList.remove('text-left');
             if (heroSocialLinks) {
@@ -2606,9 +2615,14 @@ function translatePage(lang) {
                 heroButtons.classList.remove('justify-start');
             }
         } else {
-            // In LTR, order: 1 is Left, order: 2 is Right
-            heroImageColumn.style.order = "1";
-            heroTextColumn.style.order = "2";
+            // In LTR, we want the Image on the Left (order 1) and Text on the Right (order 2) for Desktop
+            heroImageColumn.style.order = "";
+            heroTextColumn.style.order = "";
+            heroImageColumn.classList.add('lg:order-1');
+            heroImageColumn.classList.remove('lg:order-2');
+            heroTextColumn.classList.add('lg:order-2');
+            heroTextColumn.classList.remove('lg:order-1');
+
             heroTextColumn.classList.add('text-left');
             heroTextColumn.classList.remove('text-right');
             if (heroSocialLinks) {

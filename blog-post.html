@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post | Rama Albringi</title>
 
@@ -13,6 +14,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Contentful SDK & Rich Text Renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@contentful/rich-text-html-renderer@15.0.0/dist/rich-text-html-renderer.browser.min.js"></script>
     <!-- Marked.js for Markdown conversion -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -157,28 +161,149 @@
 
     <script src="script.js"></script>
     <script>
+        // دالة إنشاء Slug لتطابق الـ Path
+        const generateSlug = (text) => {
+            if (!text) return '';
+            return text.toString().trim()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-\u0621-\u064A\u0660-\u0669]/g, '')
+                .replace(/\-\-+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
+            // قراءة الـ slug من الرابط مثل /blog-post.html/slug-name
+            const pathParts = window.location.pathname.split('/blog-post.html/');
+            let postId = pathParts.length > 1 ? pathParts[1].replace(/\/$/, '') : null;
+            // Decode URI component in case of Arabic characters
+            if (postId) postId = decodeURIComponent(postId);
+            
+            // For backward compatibility during dev if ?id= is used
             const urlParams = new URLSearchParams(window.location.search);
-            const postId = urlParams.get('id');
+            if (urlParams.get('id')) {
+                postId = urlParams.get('id');
+            }
+
             const container = document.getElementById('post-container');
 
-            if (postId === null) {
+            if (!postId || postId === 'blog-post.html') {
                 container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Post not found.</p>';
                 return;
             }
 
-            fetch('data/posts.json')
-                .then(r => r.json())
-                .then(data => {
-                    const post = data.items[postId];
-                    if (!post) {
+            if (/^\d+$/.test(postId)) {
+                // --- Old Static Data (from posts.json) ---
+                fetch('data/posts.json')
+                    .then(r => r.json())
+                    .then(data => {
+                        const post = data.items[postId];
+                        if (!post) {
+                            container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Post not found.</p>';
+                            return;
+                        }
+
+                        document.title = `${post.title} | Rama Albringi`;
+                        const dateObj = new Date(post.date);
+                        const formattedDate = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+
+                        const html = `
+                            <div class="mb-12">
+                                <a href="blog.html" class="text-aurora-green font-bold hover:text-[#800020] inline-flex items-center gap-2 mb-8 transition-colors">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span data-translate-key="art_food_back">Back to Blog</span>
+                                </a>
+                                <h1 class="text-4xl md:text-5xl font-extrabold text-[#0a2472] mb-6 leading-tight">${post.title}</h1>
+                                <div class="flex items-center gap-6 text-gray-500 mb-10 border-b border-gray-100 pb-8">
+                                    <span class="flex items-center gap-2 font-medium"><i class="fas fa-calendar-alt text-[#800020]"></i> ${formattedDate}</span>
+                                    ${post.author ? `<span class="flex items-center gap-2 font-medium"><i class="fas fa-user text-[#800020]"></i> ${post.author}</span>` : ''}
+                                </div>
+                            </div>
+
+                            ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl mb-16 ring-1 ring-black/5"><img src="${post.image}" alt="${post.title}" class="w-full aspect-video object-cover"></div>` : ''}
+
+                            <div class="blog-content" dir="rtl">
+                                ${marked.parse(post.body || '')}
+                            </div>
+
+                            <div class="mt-20 pt-10 border-t border-gray-100">
+                                 <a href="blog.html" class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span data-translate-key="art_food_back">Back to Blog</span>
+                                </a>
+                            </div>
+                        `;
+                        container.innerHTML = html;
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Error loading post.</p>';
+                    });
+            } else {
+                // --- New Contentful Data ---
+                const client = contentful.createClient({
+                    space: 'gdpl0r5l5i0b',
+                    accessToken: 'AMz1VCiiYFoD0Wd8B7d6s8mpLuO6d_fVP6dxTGp5vZ8'
+                });
+
+                // Fetch ALL entries and find the one that matches the slug
+                client.getEntries({ content_type: 'blogPost' })
+                .then((response) => {
+                    const entry = response.items.find(item => 
+                        generateSlug(item.fields.title) === postId || item.sys.id === postId
+                    );
+                    
+                    if (!entry) {
                         container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Post not found.</p>';
                         return;
                     }
-
+                    const post = entry.fields;
                     document.title = `${post.title} | Rama Albringi`;
-                    const dateObj = new Date(post.date);
+                    
+                    const dateObj = new Date(entry.sys.createdAt);
                     const formattedDate = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+                    
+                    const imageUrl = post.image ? post.image.fields.file.url : '';
+                    let contentHtml = '';
+                    
+                    // Custom fallback Rich Text Renderer
+                    const renderRichText = (node) => {
+                        if (!node) return '';
+                        if (node.nodeType === 'text') {
+                            let text = node.value || '';
+                            if (node.marks) {
+                                node.marks.forEach(m => {
+                                    if (m.type === 'bold') text = `<strong>${text}</strong>`;
+                                    if (m.type === 'italic') text = `<em>${text}</em>`;
+                                    if (m.type === 'underline') text = `<u>${text}</u>`;
+                                });
+                            }
+                            return text;
+                        }
+                        const content = (node.content || []).map(renderRichText).join('');
+                        switch (node.nodeType) {
+                            case 'paragraph': return `<p>${content}</p>`;
+                            case 'heading-1': return `<h1>${content}</h1>`;
+                            case 'heading-2': return `<h2>${content}</h2>`;
+                            case 'heading-3': return `<h3>${content}</h3>`;
+                            case 'heading-4': return `<h4>${content}</h4>`;
+                            case 'heading-5': return `<h5>${content}</h5>`;
+                            case 'heading-6': return `<h6>${content}</h6>`;
+                            case 'hyperlink': return `<a href="${node.data?.uri || '#'}" target="_blank" class="text-aurora-green underline">${content}</a>`;
+                            case 'unordered-list': return `<ul>${content}</ul>`;
+                            case 'ordered-list': return `<ol>${content}</ol>`;
+                            case 'list-item': return `<li>${content}</li>`;
+                            case 'blockquote': return `<blockquote style="border-right: 4px solid #800020; padding-right: 1rem;">${content}</blockquote>`;
+                            case 'hr': return `<hr>`;
+                            case 'document': return content;
+                            default: return content;
+                        }
+                    };
+
+                    if (post.content && post.content.nodeType === 'document') {
+                        contentHtml = renderRichText(post.content);
+                    } else if (post.body) {
+                        contentHtml = marked.parse(post.body);
+                    }
 
                     const html = `
                         <div class="mb-12">
@@ -189,18 +314,17 @@
                             <h1 class="text-4xl md:text-5xl font-extrabold text-[#0a2472] mb-6 leading-tight">${post.title}</h1>
                             <div class="flex items-center gap-6 text-gray-500 mb-10 border-b border-gray-100 pb-8">
                                 <span class="flex items-center gap-2 font-medium"><i class="fas fa-calendar-alt text-[#800020]"></i> ${formattedDate}</span>
-                                ${post.author ? `<span class="flex items-center gap-2 font-medium"><i class="fas fa-user text-[#800020]"></i> ${post.author}</span>` : ''}
                             </div>
                         </div>
 
-                        ${post.image ? `<div class="rounded-3xl overflow-hidden shadow-2xl mb-16 ring-1 ring-black/5"><img src="${post.image}" alt="${post.title}" class="w-full aspect-video object-cover"></div>` : ''}
+                        ${imageUrl ? `<div class="rounded-3xl overflow-hidden shadow-2xl mb-16 ring-1 ring-black/5"><img src="https:${imageUrl}" alt="${post.title}" class="w-full aspect-video object-cover"></div>` : ''}
 
                         <div class="blog-content" dir="rtl">
-                            ${marked.parse(post.body || '')}
+                            ${contentHtml}
                         </div>
 
                         <div class="mt-20 pt-10 border-t border-gray-100">
-                             <a href="blog.html" class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
+                            <a href="blog.html" class="text-gray-500 font-bold hover:text-aurora-green flex items-center gap-2 transition-colors w-fit">
                                 <i class="fas fa-arrow-left"></i>
                                 <span data-translate-key="art_food_back">Back to Blog</span>
                             </a>
@@ -209,9 +333,10 @@
                     container.innerHTML = html;
                 })
                 .catch(err => {
-                    console.error(err);
-                    container.innerHTML = '<p class="text-center text-red-500 font-bold py-20">Error loading post.</p>';
+                    console.error("Contentful Error:", err);
+                    container.innerHTML = `<p class="text-center text-red-500 font-bold py-20">Error: ${err.message}. ${err.stack}</p>`;
                 });
+            }
         });
     </script>
 </body>

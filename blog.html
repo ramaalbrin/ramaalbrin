@@ -579,36 +579,61 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+    <!-- Contentful SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <script>
-        // Load dynamic CMS posts
+        // Load dynamic CMS posts via Contentful
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('data/posts.json').then(r => r.json()).then(data => {
-                if (data.items && data.items.length > 0) {
-                    const grid = document.getElementById('blog-grid');
+            const client = contentful.createClient({
+                space: 'gdpl0r5l5i0b',
+                accessToken: 'AMz1VCiiYFoD0Wd8B7d6s8mpLuO6d_fVP6dxTGp5vZ8'
+            });
+
+            client.getEntries({ content_type: 'blogPost' })
+                .then((response) => {
+                    const blogGrid = document.querySelector('#blog-grid');
+                    if (!blogGrid) return;
+                    
                     let dynamicHtml = '';
-                    // لعرض المقالات الأحدث أولاً
-                    data.items.slice().reverse().forEach((post, revIndex) => {
-                        const originalIndex = data.items.length - 1 - revIndex;
-                        const dateObj = new Date(post.date);
+
+                    // دالة تنظيف العنوان ليكون صديقاً للـ SEO (تدعم العربية)
+                    const generateSlug = (text) => {
+                        if (!text) return '';
+                        return text.toString().trim()
+                            .replace(/\s+/g, '-') // استبدال المسافات بشرطة
+                            .replace(/[^\w\-\u0621-\u064A\u0660-\u0669]/g, '') // السماح بالعربية والإنجليزية والأرقام
+                            .replace(/\-\-+/g, '-') // منع تكرار الشرطات
+                            .replace(/^-+|-+$/g, ''); // إزالة الشرطات من الأطراف
+                    };
+                    
+                    response.items.forEach(item => {
+                        const post = item.fields;
+                        const imageUrl = post.image ? post.image.fields.file.url : '';
+                        const dateObj = new Date(item.sys.createdAt);
                         const formattedDate = dateObj.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+                        
+                        // إنشاء الرابط ليعمل مع السيرفر المحلي و كلاود فلار
+                        const slug = generateSlug(post.title);
+                        const postUrl = `./blog-post.html/${slug}`;
+
                         dynamicHtml += `
                         <article class="border-b border-gray-100 pb-16 last:border-0 border-aurora-green/20">
                             <div class="flex flex-col md:flex-row gap-8 items-start">
-                                ${post.image ? `<a href="./blog-post.html?id=${originalIndex}" class="md:w-1/3 block shrink-0">
-                                    <img src="${post.image}" class="rounded-lg w-full aspect-video object-cover shadow-sm">
+                                ${imageUrl ? `<a href="${postUrl}" class="md:w-1/3 block shrink-0">
+                                    <img src="https:${imageUrl}" alt="${post.title}" class="rounded-lg w-full aspect-video object-cover shadow-sm">
                                 </a>` : ''}
-                                <div class="${post.image ? 'md:w-2/3' : 'w-full'}">
+                                <div class="${imageUrl ? 'md:w-2/3' : 'w-full'}">
                                     <div class="flex items-center gap-3 mb-3">
-                                        <span class="text-xs font-bold text-aurora-green uppercase tracking-wider block">مقالات لوحة التحكم</span>
+                                        <span class="text-xs font-bold text-aurora-green uppercase tracking-wider block">مقالات</span>
                                         <span class="text-xs text-gray-400">•</span>
                                         <span class="text-xs text-gray-400">${formattedDate}</span>
                                     </div>
-                                    <a href="./blog-post.html?id=${originalIndex}" class="block group">
+                                    <a href="${postUrl}" class="block group">
                                         <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-aurora-green transition leading-tight">${post.title}</h3>
                                     </a>
-                                    <p class="text-gray-600 mb-6 text-base leading-relaxed">${post.description || ''}</p>
-                                    <a href="./blog-post.html?id=${originalIndex}" class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
-                                        <span>اقرأ المزيد</span>
+                                    <p class="text-gray-600 mb-6 text-base leading-relaxed">${post.metaDescription || post.description || ''}</p>
+                                    <a href="${postUrl}" class="text-aurora-green font-bold hover:underline inline-flex items-center gap-2 group">
+                                        <span>إقرأ المزيد</span>
                                         <i class="fas fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
                                     </a>
                                 </div>
@@ -616,11 +641,10 @@
                         </article>
                         `;
                     });
-                    if (grid) {
-                        grid.insertAdjacentHTML('afterbegin', dynamicHtml);
-                    }
-                }
-            }).catch(e => console.log('No dynamic posts found or error fetching posts.json'));
+                    
+                    blogGrid.insertAdjacentHTML('afterbegin', dynamicHtml);
+                })
+                .catch(err => console.error("Error fetching blogs:", err));
         });
     </script>
 </body>
